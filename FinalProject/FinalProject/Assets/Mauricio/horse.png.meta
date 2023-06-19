@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40c702649e79d7b4fa86609af2b49bc7
+guid: cdfef659b202b034c91610a6579d4215
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,22 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_atlas_0
+      name: horse_0
       rect:
         serializedVersion: 2
-        x: 928
-        y: 704
-        width: 80
-        height: 64
+        x: 2
+        y: 64
+        width: 12
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ade68480f36a41c4492d6436826bd1c0
-      internalID: 672027409
+      spriteID: 288c242b6ff460642bc1f386288ecedb
+      internalID: -1914948364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: horse_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 64
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0799ae796b41307479dfed277bc1d035
+      internalID: 1710689842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: horse_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 64
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5da11328a68af34fb43b37b8def2916
+      internalID: 1181204955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: horse_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 64
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2102b8f46ba19e44da9dae29fcaaa4eb
+      internalID: 834058918
       vertices: []
       indices: 
       edges: []
@@ -148,7 +211,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_atlas_0: 672027409
+      horse_0: -1914948364
+      horse_1: 1710689842
+      horse_10: 1866825210
+      horse_11: 1249787459
+      horse_12: 1888820276
+      horse_13: 205484265
+      horse_14: -1062515551
+      horse_15: -2035298319
+      horse_16: -1976281034
+      horse_17: -1648591597
+      horse_18: -1792843565
+      horse_19: -1200777832
+      horse_2: 1181204955
+      horse_3: 834058918
+      horse_4: -457021672
+      horse_5: 1232941213
+      horse_6: 442086264
+      horse_7: -718402626
+      horse_8: 139671775
+      horse_9: -464348727
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
