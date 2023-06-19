@@ -8,6 +8,7 @@ public class playerGridMovement : MonoBehaviour
     [SerializeField] private Tilemap floor;
     [SerializeField] private Tilemap walls;
     private PlayerController controls;
+    public float penaltyTime;
     
     //dice parameters 
     public int recall;
@@ -31,7 +32,7 @@ public class playerGridMovement : MonoBehaviour
     void Start()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
-       _dice =  GameObject.Find("dice").GetComponent<Dice>();
+       _dice = GameObject.FindWithTag("Dice").GetComponent<Dice>();
     }
 
     private void Update()
@@ -41,14 +42,11 @@ public class playerGridMovement : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
+        if (PauseManager.paused) return;
         if (CanMove(direction) && recall > 0)
         {
             transform.position += (Vector3)direction;
-            _dice.finalSide -= 1;
-            if (_dice.finalSide == 0)
-            {
-                _dice.StartCoroutine("RollTheDice");
-            }
+            _dice.NegativeCounter();
         }
     }
 
@@ -63,5 +61,8 @@ public class playerGridMovement : MonoBehaviour
         {
             return true;
         }
+    }
+    public void Penalty(){
+        
     }
 }

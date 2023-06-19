@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3222157598505368330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3222157598505368333}
+  - component: {fileID: 3222157598505368334}
+  - component: {fileID: 3222157598505368335}
+  - component: {fileID: 3222157598505368332}
+  m_Layer: 5
+  m_Name: D12
+  m_TagString: Dice
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3222157598505368333
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222157598505368330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -308, y: 429}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3222157598505368334
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222157598505368330}
+  m_CullTransparentMesh: 1
+--- !u!114 &3222157598505368335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222157598505368330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f5a628c3c0c854b46b27bc53d0bb396c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3222157598505368332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222157598505368330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b45b45946ade4d9b8b1b59eeae2eeb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceSides:
+  - {fileID: 21300000, guid: 0f96fae8a1f4f4643b913415c56bd222, type: 3}
+  - {fileID: 21300000, guid: 929e32611b1404ccdb5fe63c823eb628, type: 3}
+  - {fileID: 21300000, guid: 00be85458c5ce455896a5a650e7ec40e, type: 3}
+  - {fileID: 21300000, guid: 9be0190e94b0e4efebd4513d809fb836, type: 3}
+  - {fileID: 21300000, guid: c00650def00bb4687a401384ea53143b, type: 3}
+  - {fileID: 21300000, guid: f40e06e42373b4d92a05a3064e361941, type: 3}
+  - {fileID: 21300000, guid: aa129c372f5e7429c9250519fc50e7b6, type: 3}
+  - {fileID: 21300000, guid: e1aea6d0216044d96abb7c6c264390b9, type: 3}
+  - {fileID: 21300000, guid: 847043d909d054c60b10f457b788c5bb, type: 3}
+  - {fileID: 21300000, guid: f0969ebec8baf44e682a0147058aeb17, type: 3}
+  - {fileID: 21300000, guid: a3cc78980d3f7400daa50d991b4d1ded, type: 3}
+  - {fileID: 21300000, guid: c726b5ed7fdb44f36ae23fe46984ee2c, type: 3}
+  - {fileID: 21300000, guid: f5a628c3c0c854b46b27bc53d0bb396c, type: 3}
+  finalSide: 0
+  timeToDelay: 2
+  numberDiceFaces: 11
