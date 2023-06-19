@@ -180,7 +180,6 @@ public class enemyGridMovement : MonoBehaviour
     [SerializeField] private Tilemap floor;
     [SerializeField] private Tilemap walls;
     private Transform[] waypoints;
-    private int currentWaypointIndex = 0;
 
     // Dados y movimiento
     public int recallE;
