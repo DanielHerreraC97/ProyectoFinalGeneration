@@ -12,17 +12,15 @@ public class EnemyGridMovemtn : MonoBehaviour
 
     [SerializeField] private string enemyDiceTag;
 
-    private int movementDirection
+    private int movementDirection;
+    private Vector2 movement;
 
 
     //dice parameters 
     public int recall;
-    private Dice _dice;
+    [SerializeField] private Dice _dice;
 
-    void Start()
-    {
-        _dice = GameObject.Find("dice").GetComponent<Dice>();
-    }
+ 
 
     private void Update()
     {
@@ -31,7 +29,19 @@ public class EnemyGridMovemtn : MonoBehaviour
 
     public void ChooseDirectionBeforeToMove()
     {
-        
+        movementDirection = Random.Range(0, 2);
+
+        if (movementDirection <= 0 ) 
+        {
+            movement = new Vector2(1,0);
+        }
+
+        else
+        {
+            movement = new Vector2(-1, 0);
+        }
+
+        Move(movement);
     }
 
     private void Move(Vector2 direction)
