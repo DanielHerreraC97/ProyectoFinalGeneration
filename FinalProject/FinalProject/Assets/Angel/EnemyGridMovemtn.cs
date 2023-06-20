@@ -20,7 +20,6 @@ public class EnemyGridMovemtn : MonoBehaviour
     public int recall;
     [SerializeField] private Dice _dice;
 
- 
 
     private void Update()
     {
