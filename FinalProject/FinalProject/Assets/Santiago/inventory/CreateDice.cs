@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-
 public class CreateDice : MonoBehaviour
 {
   private DiceCollection _diceCollection;
@@ -14,19 +12,18 @@ public class CreateDice : MonoBehaviour
   public TMP_Text numberDicesFacesTM;
   private int diceCreated;
   public GameObject equipDice;
-
+  public bool craftedDice;
   private void Start()
   {
     _diceCollection = GameObject.FindGameObjectWithTag("DiceCollection").GetComponent<DiceCollection>();
     _inventory = GameObject.FindWithTag("Player").GetComponent<Inventory>();
+    craftedDice = false;
   }
-
   private void Update()
   {
     numberDicesFacesTM.text = numberDiceFaces.ToString();
     ChangeButton();
   }
-
   private void ChangeButton()
   {
     if (diceCreated == 1)
@@ -43,6 +40,7 @@ public class CreateDice : MonoBehaviour
       {
         if (_diceCollection.isFull[i]==false)
         {
+          craftedDice = true;
           _diceCollection.isFull[i] = true;
           Instantiate(diceButton, _diceCollection.slots[i].transform, false);
           diceCreated += 1;
