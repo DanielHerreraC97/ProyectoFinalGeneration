@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using TMPro;
@@ -12,6 +13,10 @@ public class playerGridMovement : MonoBehaviour
     [SerializeField] private Tilemap floor;
     [SerializeField] private Tilemap walls;
     private PlayerController controls;
+
+    public float penaltyTime;
+
+    public UnityEvent moveEnemies;
     
     //dice parameters 
     public int recall;
@@ -58,6 +63,8 @@ public class playerGridMovement : MonoBehaviour
         {
             transform.position += (Vector3)direction;
             _dice.NegativeCounter();
+
+            moveEnemies?.Invoke();
             timer = resetTimer;
         }
     }
