@@ -387,7 +387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458883660}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe490e1df850da54f94b47e1ac96a91d, type: 3}
   m_Name: 
@@ -598,6 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floor: {fileID: 2127635284}
   walls: {fileID: 1722264455}
+  penaltyTime: 0
   recall: 0
 --- !u!212 &795360466
 SpriteRenderer:
@@ -2111,8 +2112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSides: []
-  rend: {fileID: 0}
   finalSide: 0
+  timeToDelay: 0
+  numberDiceFaces: 0
 --- !u!114 &1855425321
 MonoBehaviour:
   m_ObjectHideFlags: 0
