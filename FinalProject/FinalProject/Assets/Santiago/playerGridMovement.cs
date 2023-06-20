@@ -63,7 +63,6 @@ public class playerGridMovement : MonoBehaviour
         {
             transform.position += (Vector3)direction;
             _dice.NegativeCounter();
-
             moveEnemies?.Invoke();
             timer = resetTimer;
         }
