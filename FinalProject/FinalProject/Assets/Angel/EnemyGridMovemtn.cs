@@ -10,15 +10,13 @@ public class EnemyGridMovemtn : MonoBehaviour
     [SerializeField] private Tilemap floor;
     [SerializeField] private Tilemap walls;
 
-    [SerializeField] private string enemyDiceTag;
-
     private int movementDirection;
     private Vector2 movement;
 
 
     //dice parameters 
     public int recall;
-    [SerializeField] private Dice _dice;
+    [SerializeField] private EnemyDice _dice;
 
  
 
@@ -49,7 +47,7 @@ public class EnemyGridMovemtn : MonoBehaviour
         if (CanMove(direction) && recall > 0)
         {
             transform.position += (Vector3)direction;
-            _dice.finalSide -= 1;
+            _dice.NegativeCounter();
             if (_dice.finalSide == 0)
             {
                 _dice.StartCoroutine("RollTheDice");
