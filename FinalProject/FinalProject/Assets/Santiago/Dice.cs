@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class Dice : MonoBehaviour {
     private Image rend;
     private int randomDiceSide;
     private int lessSprite;
+    private playerGridMovement _playerGridMovement;
+    
     [Header("Dice data")]
     [Tooltip("Int final del dado el cual da el # de acciones del jugador.")]
     public int finalSide;
@@ -24,6 +27,7 @@ public class Dice : MonoBehaviour {
 
     private void Awake()
     {
+        _playerGridMovement = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
         rend = GetComponent<Image>();
         finalSide = 0;
         randomDiceSide = 0;
@@ -31,7 +35,7 @@ public class Dice : MonoBehaviour {
     }
 
     private void Start () {
-        StartCoroutine("RollTheDice");
+        StartCoroutine(RollTheDice());
     }
     
     private IEnumerator RollTheDice()
@@ -45,6 +49,9 @@ public class Dice : MonoBehaviour {
             yield return new WaitForSeconds(0.05f);
         }
         finalSide = randomDiceSide + 1;
+        _playerGridMovement.stopTimer = true;
+        StartCoroutine(_playerGridMovement.TimerActor());
+
     }
 
     public void NegativeCounter()
@@ -52,10 +59,10 @@ public class Dice : MonoBehaviour {
         finalSide -= 1;
         lessSprite = finalSide;
         rend.sprite = diceSides[lessSprite];
-       
         if (finalSide == 0)
         {
-            StartCoroutine("RollTheDice");
+            _playerGridMovement.stopTimer = false;
+            StartCoroutine(RollTheDice());
         }
     }
 }
