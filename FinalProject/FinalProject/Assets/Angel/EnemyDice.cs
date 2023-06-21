@@ -38,7 +38,7 @@ public class EnemyDice : MonoBehaviour
         StartCoroutine(RollTheDice());
     }
 
-    private IEnumerator RollTheDice()
+    public IEnumerator RollTheDice()
     {
         yield return new WaitForSeconds(timeToDelay);
 

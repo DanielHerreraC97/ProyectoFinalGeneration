@@ -84,16 +84,14 @@ public class playerGridMovement : MonoBehaviour
     {
         while (stopTimer)
         {
-            timer -= Time.deltaTime;
-            timerUI.text = timer.ToString();
+            timer -= Time.deltaTime * 0.25f;
+            timerUI.text = timer.ToString("F0");
             yield return new WaitForSeconds(0);
             if (timer < 0)
             {
                 Punishment();
             }
         }
-
-       
     }
 
     public void Punishment()
