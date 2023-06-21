@@ -31,6 +31,8 @@ public class EnemyGridMovemtn : MonoBehaviour
     public int recall;
     [SerializeField] private EnemyDice _dice;
 
+    public DiceBattle diceBattle;
+
     private void Awake()
     {
         spriteRenderer= GetComponent<SpriteRenderer>();
@@ -201,6 +203,12 @@ public class EnemyGridMovemtn : MonoBehaviour
         if (collision.gameObject.name == namePositionB)
         {
             moveToA = true;
+        }
+
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Batalla");
+            diceBattle.Battle();
         }
     }
 }

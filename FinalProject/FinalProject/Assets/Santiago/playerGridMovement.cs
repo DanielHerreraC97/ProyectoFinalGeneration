@@ -28,6 +28,9 @@ public class playerGridMovement : MonoBehaviour
     public TMP_Text timerUI;
     public bool stopTimer;
     public Transform[] randomSpots;
+
+    //Dice Battle 
+    public DiceBattle diceBattle;
     
     private void Awake()
     {
@@ -84,7 +87,7 @@ public class playerGridMovement : MonoBehaviour
     {
         while (stopTimer)
         {
-            timer -= Time.deltaTime * 0.25f;
+            timer -= Time.deltaTime;
             timerUI.text = timer.ToString("F0");
             yield return new WaitForSeconds(0);
             if (timer < 0)
@@ -96,9 +99,17 @@ public class playerGridMovement : MonoBehaviour
 
     public void Punishment()
     {
+        // Los enemigos mueven una ficha, dejando al jugador sin un movimiento
+        //moveEnemies?.Invoke();
+        //_dice.NegativeCounter();
         transform.position = randomSpots[Random.Range(0, 3)].position;
             timer = resetTimer;
             Debug.Log("punishment!");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        
     }
 
 }
