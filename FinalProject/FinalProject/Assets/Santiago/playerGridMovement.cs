@@ -7,58 +7,44 @@ using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using TMPro;
 using Random = UnityEngine.Random;
-
 public class playerGridMovement : MonoBehaviour
 {
     [SerializeField] private Tilemap floor;
     [SerializeField] private Tilemap walls;
     private PlayerController controls;
-
-    public float penaltyTime;
-
-    public UnityEvent moveEnemies;
-    
+    public UnityEvent moveEnemies, restartEnemyDices;
     //dice parameters 
-    public int recall;
+    public int recall,countToRestartenemiDices;
     private Dice _dice;
-    
     //penalty
     public float timer;
     public float resetTimer;
     public TMP_Text timerUI;
-    public bool stopTimer;
-    public Transform[] randomSpots;
 
-    //Dice Battle 
-    public DiceBattle diceBattle;
-    
+    public bool stopTimer, playerHasntMove;
+    public Transform[] randomSpots;
     private void Awake()
     {
         controls = new PlayerController();
     }
-
     private void OnEnable()
     {
         controls.Enable();
     }
-
     private void OnDisable()
     {
         controls.Disable();
     }
-
     void Start()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
        _dice = GameObject.FindWithTag("Dice").GetComponent<Dice>();
        stopTimer = false;
     }
-
     private void Update()
     {
         recall = _dice.finalSide;
     }
-
     private void Move(Vector2 direction)
     {
         if (PauseManager.paused) return;
@@ -66,11 +52,11 @@ public class playerGridMovement : MonoBehaviour
         {
             transform.position += (Vector3)direction;
             _dice.NegativeCounter();
+            restartEnemyDices?.Invoke();
             moveEnemies?.Invoke();
             timer = resetTimer;
         }
     }
-
     private bool CanMove(Vector2 direction)
     {
         Vector3Int gridPosition = floor.WorldToCell(transform.position + (Vector3)direction);
@@ -88,7 +74,7 @@ public class playerGridMovement : MonoBehaviour
         while (stopTimer)
         {
             timer -= Time.deltaTime;
-            timerUI.text = timer.ToString("F0");
+            timerUI.text = timer.ToString("F2");
             yield return new WaitForSeconds(0);
             if (timer < 0)
             {
@@ -96,20 +82,11 @@ public class playerGridMovement : MonoBehaviour
             }
         }
     }
-
     public void Punishment()
     {
-        // Los enemigos mueven una ficha, dejando al jugador sin un movimiento
-        //moveEnemies?.Invoke();
-        //_dice.NegativeCounter();
         transform.position = randomSpots[Random.Range(0, 3)].position;
             timer = resetTimer;
-            Debug.Log("punishment!");
+        restartEnemyDices?.Invoke();
+        moveEnemies?.Invoke();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-    }
-
 }

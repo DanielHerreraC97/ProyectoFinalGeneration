@@ -4,6 +4,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
+using Unity.Mathematics;
+
 public class EnemyDice : MonoBehaviour
 {
 
@@ -13,53 +15,66 @@ public class EnemyDice : MonoBehaviour
     public Sprite[] diceSides;
     private Image rend;
     private int randomDiceSide;
-    private int lessSprite;
 
     [Header("Dice data")]
     [Tooltip("Int final del dado el cual da el # de acciones del jugador.")]
     public int finalSide;
-    [Tooltip("Float que determina el tiempo en que inicia la nueva tirada.")]
-    public float timeToDelay;
 
     [Tooltip("Int que determina el # de caras del dado, valor que debe ser " +
              "igual al # de caras del dado -1")]
     public int numberDiceFaces;
+
+    public bool playerIsMoving;
 
     private void Awake()
     {
         rend = GetComponent<Image>();
         finalSide = 0;
         randomDiceSide = 0;
-        lessSprite = 0;
     }
 
     private void Start()
     {
-        StartCoroutine(RollTheDice());
+    StartCoroutine(RollTheDice());
     }
 
     public IEnumerator RollTheDice()
     {
-        yield return new WaitForSeconds(timeToDelay);
-
-        for (int i = 0; i <= 20; i++)
+        
+        do
         {
-            randomDiceSide = Random.Range(0, numberDiceFaces);
-            rend.sprite = diceSides[randomDiceSide + 1];
-            yield return new WaitForSeconds(0.05f);
+                randomDiceSide = Random.Range(0, numberDiceFaces);
+                rend.sprite = diceSides[randomDiceSide + 1];
+                yield return new WaitForSeconds(0.05f);
+                Debug.Log(playerIsMoving);
         }
-        finalSide = randomDiceSide + 1;
 
+        while (playerIsMoving == false);
+
+        playerIsMoving = false;
+        finalSide = randomDiceSide + 1;
+        rend.sprite = diceSides[finalSide];
+    }
+
+    public void NotifyPlayerMovent()
+    {
+        if (playerIsMoving == false)
+        {
+            playerIsMoving = true;
+            Debug.Log("dice to true");
+        }
     }
 
     public void NegativeCounter()
     {
-        finalSide -= 1;
-        lessSprite = finalSide;
-        rend.sprite = diceSides[lessSprite];
+        finalSide = finalSide - 1;
+        finalSide = math.abs(finalSide);
+        rend.sprite = diceSides[finalSide];
         if (finalSide == 0)
         {
+            playerIsMoving = false;
             StartCoroutine(RollTheDice());
+
         }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
 public class Dice : MonoBehaviour {
-    
     [Tooltip("Sprites de todas las caras del dado + sprite de desactivado. " +
              "El sprite desactivado debe ser #0. " +
              "De resto colocar en casilla correspondiente.")]
@@ -14,17 +13,14 @@ public class Dice : MonoBehaviour {
     private int randomDiceSide;
     private int lessSprite;
     private playerGridMovement _playerGridMovement;
-    
     [Header("Dice data")]
     [Tooltip("Int final del dado el cual da el # de acciones del jugador.")]
     public int finalSide;
     [Tooltip("Float que determina el tiempo en que inicia la nueva tirada.")]
     public float timeToDelay;
-
     [Tooltip("Int que determina el # de caras del dado, valor que debe ser " +
              "igual al # de caras del dado -1")]
     public int numberDiceFaces;
-
     private void Awake()
     {
         _playerGridMovement = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
@@ -33,16 +29,14 @@ public class Dice : MonoBehaviour {
         randomDiceSide = 0;
         lessSprite = 0;
     }
-
     private void Start () {
         StartCoroutine(RollTheDice());
     }
-    
     private IEnumerator RollTheDice()
     {
-        yield return new WaitForSeconds(timeToDelay);
+      //  yield return new WaitForSeconds(timeToDelay);
         
-        for (int i = 0; i <= 20; i++)
+        for (int i = 0; i <= 10; i++)
         {
             randomDiceSide = Random.Range(0, numberDiceFaces);
             rend.sprite = diceSides[randomDiceSide+1];
@@ -53,7 +47,6 @@ public class Dice : MonoBehaviour {
         StartCoroutine(_playerGridMovement.TimerActor());
 
     }
-
     public void NegativeCounter()
     {
         finalSide -= 1;

@@ -685,11 +685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5583816
+      value: 7.6
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.61
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -736,7 +736,6 @@ GameObject:
   - component: {fileID: 144858328}
   - component: {fileID: 144858327}
   - component: {fileID: 144858326}
-  - component: {fileID: 144858325}
   - component: {fileID: 144858324}
   m_Layer: 5
   m_Name: D20E (2)
@@ -780,45 +779,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 55c81120b4d43453d86bc08e03934eca, type: 3}
   - {fileID: 21300000, guid: c87eac477183a4c76b961d271f84ab93, type: 3}
   finalSide: 0
-  timeToDelay: 1
   numberDiceFaces: 19
---- !u!114 &144858325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 144858323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b45b45946ade4d9b8b1b59eeae2eeb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diceSides:
-  - {fileID: 21300000, guid: 2bd15336f3cd34765b2c18e1d45ec5e3, type: 3}
-  - {fileID: 21300000, guid: d407aa4934a7948c8a91ea8fcb417147, type: 3}
-  - {fileID: 21300000, guid: 1287e4a50b4d04fb0b0eb360bc40f697, type: 3}
-  - {fileID: 21300000, guid: 874c432f57db246898fa038902987e58, type: 3}
-  - {fileID: 21300000, guid: f3c930d46beb94bc68bcdabe4c7bc1ac, type: 3}
-  - {fileID: 21300000, guid: dbb0a8f81ef724c7aa5afdd7d3df7978, type: 3}
-  - {fileID: 21300000, guid: 9a2f37fe2f75b4f1daa84be9627ed347, type: 3}
-  - {fileID: 21300000, guid: c291a73e43f0342cfbedfca0eac81a06, type: 3}
-  - {fileID: 21300000, guid: b8c80e183d9f948d7b9c4a35fafd3e80, type: 3}
-  - {fileID: 21300000, guid: a49ea7edfb4a64aaf9a2178767de179c, type: 3}
-  - {fileID: 21300000, guid: 0c4d6e7dc69644d5389702b40118eac3, type: 3}
-  - {fileID: 21300000, guid: 29f3600566b524996b9e01da01f8d90b, type: 3}
-  - {fileID: 21300000, guid: 4ee30ce23040546daaa11616a68e833b, type: 3}
-  - {fileID: 21300000, guid: 1bb65411cfbe640edac4bb93ae786c53, type: 3}
-  - {fileID: 21300000, guid: 8a60613528df048778bd27b5d5c9e247, type: 3}
-  - {fileID: 21300000, guid: 51d77c9f67cd642f8b975af58b936ff0, type: 3}
-  - {fileID: 21300000, guid: d43b8eb90374a4639b9063c4724cad57, type: 3}
-  - {fileID: 21300000, guid: 5b4f953b1b3c04ded85db2876796d085, type: 3}
-  - {fileID: 21300000, guid: 5ccd84cf85bbe4fbc9fdd2e03e205a29, type: 3}
-  - {fileID: 21300000, guid: 55c81120b4d43453d86bc08e03934eca, type: 3}
-  - {fileID: 21300000, guid: c87eac477183a4c76b961d271f84ab93, type: 3}
-  finalSide: 0
-  timeToDelay: 1
-  numberDiceFaces: 19
+  playerIsMoving: 0
 --- !u!114 &144858326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3551,7 +3513,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.496, y: 0.503, z: -10}
+  m_LocalPosition: {x: -8.5, y: 0.503, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9929,7 +9891,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floor: {fileID: 1255007877}
   walls: {fileID: 414442004}
-  penaltyTime: 0
   moveEnemies:
     m_PersistentCalls:
       m_Calls:
@@ -9981,11 +9942,64 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  restartEnemyDices:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2261904775719949756}
+        m_TargetAssemblyTypeName: EnemyDice, Assembly-CSharp
+        m_MethodName: NotifyPlayerMovent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1982257528}
+        m_TargetAssemblyTypeName: EnemyDice, Assembly-CSharp
+        m_MethodName: NotifyPlayerMovent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 144858324}
+        m_TargetAssemblyTypeName: EnemyDice, Assembly-CSharp
+        m_MethodName: NotifyPlayerMovent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1774783723}
+        m_TargetAssemblyTypeName: EnemyDice, Assembly-CSharp
+        m_MethodName: NotifyPlayerMovent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   recall: 0
+  countToRestartenemiDices: 0
   timer: 5
   resetTimer: 5
   timerUI: {fileID: 780648157}
   stopTimer: 0
+  playerHasntMove: 0
   randomSpots:
   - {fileID: 589145566}
   - {fileID: 1957450524}
@@ -10051,7 +10065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465705894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.496, y: 0.503, z: 0}
+  m_LocalPosition: {x: -8.5, y: 0.503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12418,8 +12432,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 55c81120b4d43453d86bc08e03934eca, type: 3}
   - {fileID: 21300000, guid: c87eac477183a4c76b961d271f84ab93, type: 3}
   finalSide: 0
-  timeToDelay: 1
   numberDiceFaces: 19
+  playerIsMoving: 0
 --- !u!114 &1774783724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12823,7 +12837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800711039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.496, y: 0.503, z: -10}
+  m_LocalPosition: {x: -8.5, y: 0.503, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13741,11 +13755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5583816
+      value: 8.28
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.59041554
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14219,7 +14233,6 @@ GameObject:
   - component: {fileID: 1982257532}
   - component: {fileID: 1982257531}
   - component: {fileID: 1982257530}
-  - component: {fileID: 1982257529}
   - component: {fileID: 1982257528}
   m_Layer: 5
   m_Name: D20E (1)
@@ -14263,45 +14276,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 55c81120b4d43453d86bc08e03934eca, type: 3}
   - {fileID: 21300000, guid: c87eac477183a4c76b961d271f84ab93, type: 3}
   finalSide: 0
-  timeToDelay: 1
   numberDiceFaces: 19
---- !u!114 &1982257529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982257527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b45b45946ade4d9b8b1b59eeae2eeb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diceSides:
-  - {fileID: 21300000, guid: 2bd15336f3cd34765b2c18e1d45ec5e3, type: 3}
-  - {fileID: 21300000, guid: d407aa4934a7948c8a91ea8fcb417147, type: 3}
-  - {fileID: 21300000, guid: 1287e4a50b4d04fb0b0eb360bc40f697, type: 3}
-  - {fileID: 21300000, guid: 874c432f57db246898fa038902987e58, type: 3}
-  - {fileID: 21300000, guid: f3c930d46beb94bc68bcdabe4c7bc1ac, type: 3}
-  - {fileID: 21300000, guid: dbb0a8f81ef724c7aa5afdd7d3df7978, type: 3}
-  - {fileID: 21300000, guid: 9a2f37fe2f75b4f1daa84be9627ed347, type: 3}
-  - {fileID: 21300000, guid: c291a73e43f0342cfbedfca0eac81a06, type: 3}
-  - {fileID: 21300000, guid: b8c80e183d9f948d7b9c4a35fafd3e80, type: 3}
-  - {fileID: 21300000, guid: a49ea7edfb4a64aaf9a2178767de179c, type: 3}
-  - {fileID: 21300000, guid: 0c4d6e7dc69644d5389702b40118eac3, type: 3}
-  - {fileID: 21300000, guid: 29f3600566b524996b9e01da01f8d90b, type: 3}
-  - {fileID: 21300000, guid: 4ee30ce23040546daaa11616a68e833b, type: 3}
-  - {fileID: 21300000, guid: 1bb65411cfbe640edac4bb93ae786c53, type: 3}
-  - {fileID: 21300000, guid: 8a60613528df048778bd27b5d5c9e247, type: 3}
-  - {fileID: 21300000, guid: 51d77c9f67cd642f8b975af58b936ff0, type: 3}
-  - {fileID: 21300000, guid: d43b8eb90374a4639b9063c4724cad57, type: 3}
-  - {fileID: 21300000, guid: 5b4f953b1b3c04ded85db2876796d085, type: 3}
-  - {fileID: 21300000, guid: 5ccd84cf85bbe4fbc9fdd2e03e205a29, type: 3}
-  - {fileID: 21300000, guid: 55c81120b4d43453d86bc08e03934eca, type: 3}
-  - {fileID: 21300000, guid: c87eac477183a4c76b961d271f84ab93, type: 3}
-  finalSide: 0
-  timeToDelay: 1
-  numberDiceFaces: 19
+  playerIsMoving: 0
 --- !u!114 &1982257530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15253,43 +15229,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2261904775719949754}
   m_CullTransparentMesh: 1
---- !u!114 &2261904775719949752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2261904775719949754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b45b45946ade4d9b8b1b59eeae2eeb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diceSides:
-  - {fileID: 21300000, guid: 2bd15336f3cd34765b2c18e1d45ec5e3, type: 3}
-  - {fileID: 21300000, guid: d407aa4934a7948c8a91ea8fcb417147, type: 3}
-  - {fileID: 21300000, guid: 1287e4a50b4d04fb0b0eb360bc40f697, type: 3}
-  - {fileID: 21300000, guid: 874c432f57db246898fa038902987e58, type: 3}
-  - {fileID: 21300000, guid: f3c930d46beb94bc68bcdabe4c7bc1ac, type: 3}
-  - {fileID: 21300000, guid: dbb0a8f81ef724c7aa5afdd7d3df7978, type: 3}
-  - {fileID: 21300000, guid: 9a2f37fe2f75b4f1daa84be9627ed347, type: 3}
-  - {fileID: 21300000, guid: c291a73e43f0342cfbedfca0eac81a06, type: 3}
-  - {fileID: 21300000, guid: b8c80e183d9f948d7b9c4a35fafd3e80, type: 3}
-  - {fileID: 21300000, guid: a49ea7edfb4a64aaf9a2178767de179c, type: 3}
-  - {fileID: 21300000, guid: 0c4d6e7dc69644d5389702b40118eac3, type: 3}
-  - {fileID: 21300000, guid: 29f3600566b524996b9e01da01f8d90b, type: 3}
-  - {fileID: 21300000, guid: 4ee30ce23040546daaa11616a68e833b, type: 3}
-  - {fileID: 21300000, guid: 1bb65411cfbe640edac4bb93ae786c53, type: 3}
-  - {fileID: 21300000, guid: 8a60613528df048778bd27b5d5c9e247, type: 3}
-  - {fileID: 21300000, guid: 51d77c9f67cd642f8b975af58b936ff0, type: 3}
-  - {fileID: 21300000, guid: d43b8eb90374a4639b9063c4724cad57, type: 3}
-  - {fileID: 21300000, guid: 5b4f953b1b3c04ded85db2876796d085, type: 3}
-  - {fileID: 21300000, guid: 5ccd84cf85bbe4fbc9fdd2e03e205a29, type: 3}
-  - {fileID: 21300000, guid: 55c81120b4d43453d86bc08e03934eca, type: 3}
-  - {fileID: 21300000, guid: c87eac477183a4c76b961d271f84ab93, type: 3}
-  finalSide: 0
-  timeToDelay: 1
-  numberDiceFaces: 19
 --- !u!114 &2261904775719949753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15331,7 +15270,6 @@ GameObject:
   - component: {fileID: 2261904775719949755}
   - component: {fileID: 2261904775719949702}
   - component: {fileID: 2261904775719949753}
-  - component: {fileID: 2261904775719949752}
   - component: {fileID: 2261904775719949756}
   m_Layer: 5
   m_Name: D20E
@@ -15395,5 +15333,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 55c81120b4d43453d86bc08e03934eca, type: 3}
   - {fileID: 21300000, guid: c87eac477183a4c76b961d271f84ab93, type: 3}
   finalSide: 0
-  timeToDelay: 1
   numberDiceFaces: 19
+  playerIsMoving: 0
