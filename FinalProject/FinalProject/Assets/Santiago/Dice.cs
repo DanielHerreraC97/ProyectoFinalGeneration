@@ -34,9 +34,9 @@ public class Dice : MonoBehaviour {
     }
     private IEnumerator RollTheDice()
     {
-        yield return new WaitForSeconds(timeToDelay);
+      //  yield return new WaitForSeconds(timeToDelay);
         
-        for (int i = 0; i <= 20; i++)
+        for (int i = 0; i <= 10; i++)
         {
             randomDiceSide = Random.Range(0, numberDiceFaces);
             rend.sprite = diceSides[randomDiceSide+1];

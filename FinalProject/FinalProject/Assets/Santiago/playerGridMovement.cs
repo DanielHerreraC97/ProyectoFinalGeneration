@@ -12,15 +12,16 @@ public class playerGridMovement : MonoBehaviour
     [SerializeField] private Tilemap floor;
     [SerializeField] private Tilemap walls;
     private PlayerController controls;
-    public UnityEvent moveEnemies;
+    public UnityEvent moveEnemies, restartEnemyDices;
     //dice parameters 
-    public int recall;
+    public int recall,countToRestartenemiDices;
     private Dice _dice;
     //penalty
     public float timer;
     public float resetTimer;
     public TMP_Text timerUI;
-    public bool stopTimer;
+
+    public bool stopTimer, playerHasntMove;
     public Transform[] randomSpots;
     private void Awake()
     {
@@ -51,6 +52,7 @@ public class playerGridMovement : MonoBehaviour
         {
             transform.position += (Vector3)direction;
             _dice.NegativeCounter();
+            restartEnemyDices?.Invoke();
             moveEnemies?.Invoke();
             timer = resetTimer;
         }
@@ -72,7 +74,7 @@ public class playerGridMovement : MonoBehaviour
         while (stopTimer)
         {
             timer -= Time.deltaTime;
-            timerUI.text = timer.ToString();
+            timerUI.text = timer.ToString("F2");
             yield return new WaitForSeconds(0);
             if (timer < 0)
             {
@@ -84,6 +86,7 @@ public class playerGridMovement : MonoBehaviour
     {
         transform.position = randomSpots[Random.Range(0, 3)].position;
             timer = resetTimer;
-            Debug.Log("punishment!");
+        restartEnemyDices?.Invoke();
+        moveEnemies?.Invoke();
     }
 }
