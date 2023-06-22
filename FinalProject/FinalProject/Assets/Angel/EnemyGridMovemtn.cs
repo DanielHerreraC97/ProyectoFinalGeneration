@@ -21,7 +21,7 @@ public class EnemyGridMovemtn : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rigidbody2DEnemie;
 
     private int movementDirection;
     private Vector2 movement;
@@ -35,7 +35,7 @@ public class EnemyGridMovemtn : MonoBehaviour
     {
         spriteRenderer= GetComponent<SpriteRenderer>();
         boxCollider2D= GetComponent<BoxCollider2D>();
-        rigidbody2D= GetComponent<Rigidbody2D>();
+        rigidbody2DEnemie= GetComponent<Rigidbody2D>();
 
         DefineINicialMovementObjective();
     }
@@ -117,7 +117,7 @@ public class EnemyGridMovemtn : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         boxCollider2D.enabled = false;
-        rigidbody2D.Sleep();
+        rigidbody2DEnemie.Sleep();
 
         if (moveToA)
         {
@@ -134,7 +134,7 @@ public class EnemyGridMovemtn : MonoBehaviour
             movement = new Vector2(-1, 0);
             Move(movement);
         }
-        rigidbody2D.WakeUp();
+        rigidbody2DEnemie.WakeUp();
         boxCollider2D.enabled = true;
         spriteRenderer.enabled = true;
     }
@@ -143,7 +143,7 @@ public class EnemyGridMovemtn : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         boxCollider2D.enabled = false;
-        rigidbody2D.Sleep();
+        rigidbody2DEnemie.Sleep();
 
         if (moveToA)
         {
@@ -160,7 +160,7 @@ public class EnemyGridMovemtn : MonoBehaviour
             movement = new Vector2(1, 0);
             Move(movement);
         }
-        rigidbody2D.WakeUp();
+        rigidbody2DEnemie.WakeUp();
         boxCollider2D.enabled = true;
         spriteRenderer.enabled = true;
     }
