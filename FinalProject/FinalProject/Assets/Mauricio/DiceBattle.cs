@@ -77,8 +77,8 @@ public class DiceBattle : MonoBehaviour
 
         if (playerRecall > enemyRecall)
         {
-            enemyObject.GetComponent<SpriteRenderer>().enabled = false;
-            diceObject.GetComponent<SpriteRenderer>().enabled = false;
+            enemyObject = null;
+            diceObject = null;
         }
         else
         {
