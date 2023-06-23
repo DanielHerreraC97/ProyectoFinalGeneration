@@ -19,10 +19,13 @@ public class playerGridMovement : MonoBehaviour
     //penalty
     public float timer;
     public float resetTimer;
-    public TMP_Text timerUI;
+    //public TMP_Text timerUI;
 
     public bool stopTimer, playerHasntMove;
     public Transform[] randomSpots;
+
+    [SerializeField] private Slider slider;
+
     private void Awake()
     {
         controls = new PlayerController();
@@ -44,6 +47,12 @@ public class playerGridMovement : MonoBehaviour
     private void Update()
     {
         recall = _dice.finalSide;
+
+        slider.maxValue = resetTimer;
+        if (timer >= 0)
+        {
+            slider.value = timer;
+        }   
     }
     private void Move(Vector2 direction)
     {
@@ -55,6 +64,7 @@ public class playerGridMovement : MonoBehaviour
             restartEnemyDices?.Invoke();
             moveEnemies?.Invoke();
             timer = resetTimer;
+            //slider.maxValue = resetTimer;
         }
     }
     private bool CanMove(Vector2 direction)
@@ -74,7 +84,7 @@ public class playerGridMovement : MonoBehaviour
         while (stopTimer)
         {
             timer -= Time.deltaTime;
-            timerUI.text = timer.ToString("F2");
+            //timerUI.text = timer.ToString("F2");
             yield return new WaitForSeconds(0);
             if (timer < 0)
             {
