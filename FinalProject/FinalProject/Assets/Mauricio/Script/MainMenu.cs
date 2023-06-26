@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         AudioManager.Instance.PlaySFX("Botones");
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(1);
     }
 
     public void OpenSettings()
@@ -72,6 +72,6 @@ public class MainMenu : MonoBehaviour
     public void Mute()
     {
         AudioManager.Instance.PlaySFX("Botones");
-        MusicSlider.value = 0;
+        //MusicSlider.value = 0;
     }
 }
