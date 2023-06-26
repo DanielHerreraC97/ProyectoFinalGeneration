@@ -22,8 +22,6 @@ public class EnemyGridMovemtn : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
     private Rigidbody2D rigidbody2DEnemie;
-
-    private int movementDirection;
     private Vector2 movement;
 
 
@@ -31,13 +29,14 @@ public class EnemyGridMovemtn : MonoBehaviour
     public int recall;
     [SerializeField] private EnemyDice _dice;
 
-    public DiceBattle diceBattle;
+ private Rigidbody2D rb;
 
     private void Awake()
     {
-        spriteRenderer= GetComponent<SpriteRenderer>();
+        spriteRenderer= this.transform.GetChild(0).GetComponent<SpriteRenderer>();
         boxCollider2D= GetComponent<BoxCollider2D>();
         rigidbody2DEnemie= GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         DefineINicialMovementObjective();
     }
@@ -171,8 +170,7 @@ public class EnemyGridMovemtn : MonoBehaviour
     {
         if (CanMove(direction) && recall > 0)
         {
-            transform.position += (Vector3)direction;
-
+            rb.MovePosition(transform.position += (Vector3)direction);
             if (_dice.finalSide == 0)
             {
                 _dice.StartCoroutine("RollTheDice");
@@ -205,10 +203,12 @@ public class EnemyGridMovemtn : MonoBehaviour
             moveToA = true;
         }
 
-        if (collision.CompareTag("Player"))
+     /*   if (collision.CompareTag("Player"))
         {
             Debug.Log("Batalla");
             diceBattle.Battle();
         }
+     
+     */
     }
 }
