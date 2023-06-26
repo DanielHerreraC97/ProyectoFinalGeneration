@@ -10,31 +10,32 @@ public class EnemyFightLogic : MonoBehaviour
 {
     public int enemyEnergy;
     private playerGridMovement _playerGridMovement;
-    public TMP_Text energyCount;
 
     private void Start()
     {
         _playerGridMovement = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
     }
-
     private void Update()
     {
-        energyCount.text = enemyEnergy.ToString();
+        enemyEnergy = GetComponent<EnemyGridMovemtn>().recall;
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             if (_playerGridMovement.recall > enemyEnergy)
             {
-                enemyEnergy -= _playerGridMovement.recall;
-                Destroy(gameObject,5f);
+                // enemyEnergy -= _playerGridMovement.recall;
+                // Destroy(gameObject,5f);
+                Debug.Log("player win");
+                this.gameObject.SetActive(false);
             }
 
-            if (_playerGridMovement.recall < enemyEnergy)
+            if (_playerGridMovement.recall <= enemyEnergy)
             {
-                Destroy(other.gameObject,5f);
+                collision.gameObject.SetActive(false);
+                //Destroy(other.gameObject,5f);
+                Debug.Log("Player lose");
             }
         }
     }

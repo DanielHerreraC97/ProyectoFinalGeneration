@@ -23,12 +23,14 @@ public class playerGridMovement : MonoBehaviour
 
     public bool stopTimer, playerHasntMove;
     public Transform[] randomSpots;
+    private Rigidbody2D rb;
 
     [SerializeField] private Slider slider;
 
     private void Awake()
     {
         controls = new PlayerController();
+        rb= GetComponent<Rigidbody2D>();
     }
     private void OnEnable()
     {
@@ -47,7 +49,6 @@ public class playerGridMovement : MonoBehaviour
     private void Update()
     {
         recall = _dice.finalSide;
-
         slider.maxValue = resetTimer;
         if (timer >= 0)
         {
@@ -59,7 +60,7 @@ public class playerGridMovement : MonoBehaviour
         if (PauseManager.paused) return;
         if (CanMove(direction) && recall > 0)
         {
-            transform.position += (Vector3)direction;
+            rb.MovePosition(transform.position += (Vector3)direction);
             _dice.NegativeCounter();
             restartEnemyDices?.Invoke();
             moveEnemies?.Invoke();
@@ -94,6 +95,7 @@ public class playerGridMovement : MonoBehaviour
     }
     public void Punishment()
     {
+
         transform.position = randomSpots[Random.Range(0, 3)].position;
             timer = resetTimer;
         restartEnemyDices?.Invoke();

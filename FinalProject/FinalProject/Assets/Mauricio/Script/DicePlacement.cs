@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class DicePlacement : MonoBehaviour
 {
-    public GameObject enemyObject; // Referencia al objeto del enemigo
     public Image diceRenderer; // Referencia al componente SpriteRenderer del dado
     public float offsetY = 1f; // Desplazamiento vertical ajustable
     private float diceScale = .5f;
@@ -25,6 +24,7 @@ public class DicePlacement : MonoBehaviour
 
     private void Update()
     {
+
         // Actualiza el sprite del dado con el resultado del lanzamiento
         diceSpriteRenderer.sprite = diceScript.diceSides[diceScript.finalSide];
     }
@@ -32,7 +32,7 @@ public class DicePlacement : MonoBehaviour
     private void PlaceDiceOnEnemy()
     {
         // Obtén la posición del enemigo
-        Vector3 enemyPosition = enemyObject.transform.position;
+        Vector3 enemyPosition = transform.position;
 
         // Ajusta la posición del dado por encima del enemigo con el desplazamiento vertical
         Vector3 dicePosition = new Vector3(enemyPosition.x, enemyPosition.y + offsetY, enemyPosition.z);
@@ -50,7 +50,7 @@ public class DicePlacement : MonoBehaviour
         diceSpriteRenderer.sortingOrder = 5;
 
         // Asigna el objeto del dado al objeto del enemigo como hijo
-        diceObject.transform.SetParent(enemyObject.transform);
+        diceObject.transform.SetParent(transform);
     }
 }
 

@@ -46,7 +46,6 @@ public class EnemyDice : MonoBehaviour
                 randomDiceSide = Random.Range(0, numberDiceFaces);
                 rend.sprite = diceSides[randomDiceSide + 1];
                 yield return new WaitForSeconds(0.05f);
-                Debug.Log(playerIsMoving);
         }
 
         while (playerIsMoving == false);
@@ -61,7 +60,6 @@ public class EnemyDice : MonoBehaviour
         if (playerIsMoving == false)
         {
             playerIsMoving = true;
-            Debug.Log("dice to true");
         }
     }
 
@@ -74,7 +72,6 @@ public class EnemyDice : MonoBehaviour
         {
             playerIsMoving = false;
             StartCoroutine(RollTheDice());
-
         }
     }
 }
