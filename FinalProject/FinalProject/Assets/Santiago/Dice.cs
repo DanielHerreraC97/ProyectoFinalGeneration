@@ -31,16 +31,7 @@ public class Dice : MonoBehaviour {
     }
     private void Start () {
         StartCoroutine(RollTheDice());
-        //StartCoroutine(WaitTutorial());
     }
-    
-    /*private IEnumerator WaitTutorial()
-    {
-        Time.timeScale = 0;
-        yield return new WaitForSeconds(0.05f);
-        Time.timeScale = 1;
-    }*/
-
     private IEnumerator RollTheDice()
     {
       //  yield return new WaitForSeconds(timeToDelay);
