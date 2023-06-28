@@ -10,7 +10,7 @@ public class Finish : MonoBehaviour
     public void RetryGame()
     {
         AudioManager.Instance.PlaySFX("Botones");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public void MainMenu()

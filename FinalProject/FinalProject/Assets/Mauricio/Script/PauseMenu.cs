@@ -11,9 +11,6 @@ public class PauseMenu : MonoBehaviour
     //UI
     public Slider MusicSlider, SFXSlider;
 
-    //Mute
-    private float LastValueMusic, LastValueSFX;
-
     //MainMenu
     public GameObject Pausemenu, Settingsmenu;
 
@@ -30,9 +27,6 @@ public class PauseMenu : MonoBehaviour
             Pause();
             Time.timeScale = 0;
         }
-
-        //LastValueMusic = MusicSlider.value;
-        //LastValueSFX = SFXSlider.value;
     }
 
     public void Pause()
@@ -89,26 +83,10 @@ public class PauseMenu : MonoBehaviour
     public void MuteMusic()
     {
         AudioManager.Instance.PlaySFX("Botones");
-        //MusicSlider.value = 0;
-        //MusicSlider.value = LastValueMusic;
     }
 
     public void MuteSFX()
     {
         AudioManager.Instance.PlaySFX("Botones");
-        //SFXSlider.value = 0;
-        //SFXSlider.value = LastValueSFX;
     }
-
-    /*public void UnMuteMusic()
-    {
-        AudioManager.Instance.PlaySFX("Botones");
-        MusicSlider.value = LastValueMusic;
-    }
-
-    public void UnMuteSFX()
-    {
-        AudioManager.Instance.PlaySFX("Botones");
-        SFXSlider.value = LastValueSFX;
-    }*/
 }
