@@ -83,6 +83,7 @@ public class playerGridMovement : MonoBehaviour
     }
     public IEnumerator TimerActor()
     {
+        timer -= Time.deltaTime;
         while (stopTimer)
         {
             timer -= Time.deltaTime;
