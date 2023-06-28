@@ -12,9 +12,13 @@ public class EnemyFightLogic : MonoBehaviour
     public int enemyEnergy;
     private playerGridMovement _playerGridMovement;
 
-    private int ConditiontoWin = 0;
+    private static int ConditiontoWin;
+
 
     public Animator enemyAnimator;
+    public Animator playerAnimator;
+    private bool PlayerDeath = false;
+    private bool EnemyDeath = false;
 
     private void Start()
     {
@@ -24,8 +28,8 @@ public class EnemyFightLogic : MonoBehaviour
     {
         enemyEnergy = GetComponent<EnemyGridMovemtn>().recall;
 
-        Debug.Log(ConditiontoWin);
-        if(ConditiontoWin == 3)
+        Debug.Log("enemigos muertos: " + ConditiontoWin);
+        if (ConditiontoWin == 4)
         {
             SceneManager.LoadScene(3);
         }
@@ -34,24 +38,46 @@ public class EnemyFightLogic : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            EnemyDeath = false;
             if (_playerGridMovement.recall > enemyEnergy)
             {
                 // enemyEnergy -= _playerGridMovement.recall;
                 // Destroy(gameObject,5f);
                 Debug.Log("player win");
-                this.gameObject.SetActive(false);
-                ConditiontoWin += 1;
-
-                enemyAnimator.SetTrigger("Death");
+                //this.gameObject.SetActive(false);
+                ConditiontoWin++;
+                EnemyDeath = true;
+                StartCoroutine(WaitForDeathAnimation());
             }
 
             if (_playerGridMovement.recall <= enemyEnergy)
             {
-                collision.gameObject.SetActive(false);
+                //collision.gameObject.SetActive(false);
                 //Destroy(other.gameObject,5f);
                 Debug.Log("Player lose");
-                SceneManager.LoadScene(2);
+                //SceneManager.LoadScene(2);
+                PlayerDeath = true;
+                StartCoroutine(WaitForDeathAnimation());
             }
+        }
+    }
+
+    private IEnumerator WaitForDeathAnimation()
+    {
+        if (EnemyDeath == true)
+        {
+            enemyAnimator.SetTrigger("IsDeath");
+            float tiempoEsperaE = 2.0f;
+            yield return new WaitForSecondsRealtime(tiempoEsperaE);
+            gameObject.SetActive(false);
+        }
+
+        if (PlayerDeath == true)
+        {
+            playerAnimator.SetTrigger("IsDeath");
+            float tiempoEsperaP = 2.0f;
+            yield return new WaitForSecondsRealtime(tiempoEsperaP);
+            SceneManager.LoadScene(2);
         }
     }
 }
