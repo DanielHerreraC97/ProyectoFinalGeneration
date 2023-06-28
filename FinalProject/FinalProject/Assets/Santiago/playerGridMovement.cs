@@ -104,7 +104,7 @@ public class playerGridMovement : MonoBehaviour
         timer = resetTimer;
         restartEnemyDices?.Invoke();
         moveEnemies?.Invoke();
-        if (_walls.wallClose = true)
+         if (_walls.wallClose = true)
         {
             
         }
