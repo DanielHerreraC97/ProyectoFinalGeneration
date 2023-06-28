@@ -170,6 +170,7 @@ public class EnemyGridMovemtn : MonoBehaviour
     {
         if (CanMove(direction) && recall > 0)
         {
+            //transform.position = Vector3.MoveTowards(transform.position, direction, 1f);
             rb.MovePosition(transform.position += (Vector3)direction);
             if (_dice.finalSide == 0)
             {

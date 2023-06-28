@@ -60,6 +60,7 @@ public class playerGridMovement : MonoBehaviour
         if (PauseManager.paused) return;
         if (CanMove(direction) && recall > 0)
         {
+            //transform.position = Vector3.MoveTowards(transform.position, direction, 1f);
             rb.MovePosition(transform.position += (Vector3)direction);
             _dice.NegativeCounter();
             restartEnemyDices?.Invoke();
@@ -107,6 +108,7 @@ public class playerGridMovement : MonoBehaviour
         }
             while(canPunish == false );
 
+       // transform.position = Vector3.MoveTowards(transform.position, punishDirection, 1f);
         transform.position = punishDirection;
         timer = resetTimer;
         restartEnemyDices?.Invoke();
