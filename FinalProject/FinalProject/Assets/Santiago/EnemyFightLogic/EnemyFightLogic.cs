@@ -14,6 +14,8 @@ public class EnemyFightLogic : MonoBehaviour
 
     private int ConditiontoWin = 0;
 
+    public Animator enemyAnimator;
+
     private void Start()
     {
         _playerGridMovement = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
@@ -39,6 +41,8 @@ public class EnemyFightLogic : MonoBehaviour
                 Debug.Log("player win");
                 this.gameObject.SetActive(false);
                 ConditiontoWin += 1;
+
+                enemyAnimator.SetTrigger("Death");
             }
 
             if (_playerGridMovement.recall <= enemyEnergy)
