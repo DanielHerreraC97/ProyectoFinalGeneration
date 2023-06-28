@@ -42,7 +42,7 @@ public class playerGridMovement : MonoBehaviour
     }
     void Start()
     {
-        controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
+       controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
        _dice = GameObject.FindWithTag("Dice").GetComponent<Dice>();
        stopTimer = false;
     }

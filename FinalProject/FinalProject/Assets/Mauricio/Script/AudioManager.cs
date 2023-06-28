@@ -34,11 +34,17 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Escena 1");
             musicPlayed = true;
         }
-        else if (SceneManager.GetActiveScene().name == "AngelNewBase" && musicPlayed)
+        else if (SceneManager.GetActiveScene().buildIndex == 1 && musicPlayed || SceneManager.GetActiveScene().buildIndex == 3 && musicPlayed)
         {
             Debug.Log("Escena 2");
             PlayMusic("Theme2");
             musicPlayed = false;
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2 && !musicPlayed)
+        {
+            Debug.Log("Escena 2");
+            PlayMusic("Theme3");
+            musicPlayed = true;
         }
     }
 

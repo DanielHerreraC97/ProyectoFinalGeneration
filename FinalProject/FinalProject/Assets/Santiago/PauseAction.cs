@@ -41,7 +41,7 @@ public partial class @PauseAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3834887a-3c0d-4b88-81a6-3e5670a1075e"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

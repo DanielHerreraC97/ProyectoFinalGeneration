@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Tab))
+        if(Input.GetKey(KeyCode.Escape))
         {
             Pause();
             Time.timeScale = 0;

@@ -18,6 +18,7 @@ public class Exit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Denreo");
             isInRange = true;
             Decision.gameObject.SetActive(true);
         }
