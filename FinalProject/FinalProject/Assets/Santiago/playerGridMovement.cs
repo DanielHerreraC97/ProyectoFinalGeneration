@@ -95,10 +95,34 @@ public class playerGridMovement : MonoBehaviour
     }
     public void Punishment()
     {
+        bool canPunish = false;
 
-        transform.position = randomSpots[Random.Range(0, 3)].position;
-            timer = resetTimer;
+        Vector3 punishDirection;
+        do
+        {
+        
+            punishDirection = randomSpots[Random.Range(0, 4)].position;
+
+            canPunish = CanItPunishmentInThatdirection(punishDirection);
+        }
+            while(canPunish == false );
+
+        transform.position = punishDirection;
+        timer = resetTimer;
         restartEnemyDices?.Invoke();
         moveEnemies?.Invoke();
+    }
+
+    private bool CanItPunishmentInThatdirection(Vector3 directionToPunish)
+    {
+        Vector3Int gridPosition = floor.WorldToCell(directionToPunish);
+        if (!floor.HasTile(gridPosition) || walls.HasTile(gridPosition))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
