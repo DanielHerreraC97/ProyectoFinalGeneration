@@ -5,11 +5,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyFightLogic : MonoBehaviour
 {
     public int enemyEnergy;
     private playerGridMovement _playerGridMovement;
+
+    private int ConditiontoWin = 0;
 
     private void Start()
     {
@@ -18,6 +21,12 @@ public class EnemyFightLogic : MonoBehaviour
     private void Update()
     {
         enemyEnergy = GetComponent<EnemyGridMovemtn>().recall;
+
+        Debug.Log(ConditiontoWin);
+        if(ConditiontoWin == 3)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,6 +38,7 @@ public class EnemyFightLogic : MonoBehaviour
                 // Destroy(gameObject,5f);
                 Debug.Log("player win");
                 this.gameObject.SetActive(false);
+                ConditiontoWin += 1;
             }
 
             if (_playerGridMovement.recall <= enemyEnergy)
@@ -36,6 +46,7 @@ public class EnemyFightLogic : MonoBehaviour
                 collision.gameObject.SetActive(false);
                 //Destroy(other.gameObject,5f);
                 Debug.Log("Player lose");
+                SceneManager.LoadScene(2);
             }
         }
     }

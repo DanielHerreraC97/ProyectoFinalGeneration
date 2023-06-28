@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
+
+    private bool musicPlayed = false;
 
     private void Awake()
     {
@@ -23,10 +26,23 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Update()
     {
-        PlayMusic("Theme");
+        if (SceneManager.GetActiveScene().name == "MainMenu" && !musicPlayed)
+        {
+            PlayMusic("Theme1");
+            Debug.Log("Escena 1");
+            musicPlayed = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "AngelNewBase" && musicPlayed)
+        {
+            Debug.Log("Escena 2");
+            PlayMusic("Theme2");
+            musicPlayed = false;
+        }
     }
+
+
 
     public void PlayMusic(string Name)
     {
