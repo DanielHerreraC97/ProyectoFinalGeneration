@@ -67,7 +67,7 @@ public class EnemyFightLogic : MonoBehaviour
         if (EnemyDeath == true)
         {
             enemyAnimator.SetTrigger("IsDeath");
-            AudioManager.Instance.PlaySFX("DeathM");
+            //AudioManager.Instance.PlaySFX("DeathM");
             float tiempoEsperaE = 2.0f;
             yield return new WaitForSecondsRealtime(tiempoEsperaE);
             gameObject.SetActive(false);
@@ -76,7 +76,7 @@ public class EnemyFightLogic : MonoBehaviour
         if (PlayerDeath == true)
         {
             playerAnimator.SetTrigger("IsDeath");
-            AudioManager.Instance.PlaySFX("DeathP");
+            //AudioManager.Instance.PlaySFX("DeathP");
             float tiempoEsperaP = 2.0f;
             yield return new WaitForSecondsRealtime(tiempoEsperaP);
             SceneManager.LoadScene(4);

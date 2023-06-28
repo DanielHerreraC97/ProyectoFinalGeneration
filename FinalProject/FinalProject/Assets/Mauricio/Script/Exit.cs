@@ -48,6 +48,10 @@ public class Exit : MonoBehaviour
             {
                 SceneManager.LoadScene(3);
             }
+            else if (currentScene == 3)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
 
