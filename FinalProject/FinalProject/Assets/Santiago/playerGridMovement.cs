@@ -6,7 +6,6 @@ using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 public class playerGridMovement : MonoBehaviour
 {
@@ -27,9 +26,7 @@ public class playerGridMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField] private Slider slider;
-    
-    //Wall
-    private wallsDetection _walls;
+
     private void Awake()
     {
         controls = new PlayerController();
@@ -46,7 +43,6 @@ public class playerGridMovement : MonoBehaviour
     void Start()
     {
         controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
-        _walls = GameObject.FindWithTag("Player").GetComponent<wallsDetection>();
        _dice = GameObject.FindWithTag("Dice").GetComponent<Dice>();
        stopTimer = false;
     }
@@ -99,14 +95,34 @@ public class playerGridMovement : MonoBehaviour
     }
     public void Punishment()
     {
-       
-        transform.position = randomSpots[Random.Range(0, 3)].position;
+        bool canPunish = false;
+
+        Vector3 punishDirection;
+        do
+        {
+        
+            punishDirection = randomSpots[Random.Range(0, 4)].position;
+
+            canPunish = CanItPunishmentInThatdirection(punishDirection);
+        }
+            while(canPunish == false );
+
+        transform.position = punishDirection;
         timer = resetTimer;
         restartEnemyDices?.Invoke();
         moveEnemies?.Invoke();
-         if (_walls.wallClose = true)
+    }
+
+    private bool CanItPunishmentInThatdirection(Vector3 directionToPunish)
+    {
+        Vector3Int gridPosition = floor.WorldToCell(directionToPunish);
+        if (!floor.HasTile(gridPosition) || walls.HasTile(gridPosition))
         {
-            
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }
