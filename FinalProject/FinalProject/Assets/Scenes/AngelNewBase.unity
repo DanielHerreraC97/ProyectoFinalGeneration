@@ -6123,6 +6123,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066160421}
   m_CullTransparentMesh: 1
+--- !u!95 &1126400091 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5111459410554778753, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
+  m_PrefabInstance: {fileID: 2584297962110352116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1132338143
 GameObject:
   m_ObjectHideFlags: 0
@@ -12988,6 +12993,10 @@ PrefabInstance:
       propertyPath: enemyAnimator
       value: 
       objectReference: {fileID: 1285494590628903223}
+    - target: {fileID: 1285494590329266912, guid: ad04f9bd6671d4d47a4b2b0699ce5f31, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1126400091}
     - target: {fileID: 1285494590329266918, guid: ad04f9bd6671d4d47a4b2b0699ce5f31, type: 3}
       propertyPath: _dice
       value: 
@@ -13256,6 +13265,10 @@ PrefabInstance:
       propertyPath: enemyAnimator
       value: 
       objectReference: {fileID: 3415525009591337278}
+    - target: {fileID: 3415525008881258119, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1126400091}
     - target: {fileID: 3415525008881258123, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: _dice
       value: 
@@ -13349,6 +13362,10 @@ PrefabInstance:
       propertyPath: enemyAnimator
       value: 
       objectReference: {fileID: 5016591578044167892}
+    - target: {fileID: 5016591578052064212, guid: f6102877b9b44374e9a23e0f1c55e51a, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1126400091}
     - target: {fileID: 5016591579632978403, guid: f6102877b9b44374e9a23e0f1c55e51a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -13467,6 +13484,10 @@ PrefabInstance:
       propertyPath: enemyAnimator
       value: 
       objectReference: {fileID: 7495977976241189839}
+    - target: {fileID: 7495977977822482743, guid: 4bfb03a5df278214b97cb47697ef7e68, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1126400091}
     - target: {fileID: 7495977977822482747, guid: 4bfb03a5df278214b97cb47697ef7e68, type: 3}
       propertyPath: _dice
       value: 

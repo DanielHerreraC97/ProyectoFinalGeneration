@@ -31,7 +31,7 @@ public class EnemyFightLogic : MonoBehaviour
         Debug.Log("enemigos muertos: " + ConditiontoWin);
         if (ConditiontoWin == 4)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(5);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -77,7 +77,7 @@ public class EnemyFightLogic : MonoBehaviour
             playerAnimator.SetTrigger("IsDeath");
             float tiempoEsperaP = 2.0f;
             yield return new WaitForSecondsRealtime(tiempoEsperaP);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(4);
         }
     }
 }
