@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 642261287376838416}
   - component: {fileID: 642261287376838421}
   - component: {fileID: 642261287376838418}
-  - component: {fileID: 3660514652257090513}
   m_Layer: 0
   m_Name: SpecialGrid1
   m_TagString: Untagged
@@ -125,19 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bcbf3ebead247408a0259139a56dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Animation: {fileID: 3660514652257090513}
---- !u!111 &3660514652257090513
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642261287376838417}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: bc8ec6a1e2095429e8406bf2e78484f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  _Animation: {fileID: 0}
