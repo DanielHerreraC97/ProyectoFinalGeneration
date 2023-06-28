@@ -46,7 +46,7 @@ public class playerGridMovement : MonoBehaviour
        _dice = GameObject.FindWithTag("Dice").GetComponent<Dice>();
        stopTimer = false;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         recall = _dice.finalSide;
         slider.maxValue = resetTimer;
