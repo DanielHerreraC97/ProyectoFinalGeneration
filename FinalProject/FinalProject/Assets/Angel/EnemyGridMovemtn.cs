@@ -31,13 +31,16 @@ public class EnemyGridMovemtn : MonoBehaviour
 
  private Rigidbody2D rb;
 
+    private playerGridMovement player;
+
     private void Awake()
     {
         spriteRenderer= this.transform.GetChild(0).GetComponent<SpriteRenderer>();
         boxCollider2D= GetComponent<BoxCollider2D>();
         rigidbody2DEnemie= GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
-
+        player = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
+        player.moveEnemies.AddListener(MoveThisEnemy);
         DefineINicialMovementObjective();
     }
 

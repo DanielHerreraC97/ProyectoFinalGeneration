@@ -26,11 +26,15 @@ public class EnemyDice : MonoBehaviour
 
     public bool playerIsMoving;
 
+    private playerGridMovement player;
+
     private void Awake()
     {
         rend = GetComponent<Image>();
         finalSide = 0;
         randomDiceSide = 0;
+        player = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
+        player.restartEnemyDices.AddListener(NotifyPlayerMovent);
     }
 
     private void Start()
