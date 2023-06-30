@@ -24,6 +24,7 @@ public class playerGridMovement : MonoBehaviour
     public bool stopTimer, playerHasntMove;
     public Transform[] randomSpots;
     private Rigidbody2D rb;
+    public bool isTimerWorking;
 
     [SerializeField] private Slider slider;
 
@@ -83,6 +84,7 @@ public class playerGridMovement : MonoBehaviour
     }
     public IEnumerator TimerActor()
     {
+        isTimerWorking= true;
         while (stopTimer)
         {
             timer -= Time.deltaTime;
@@ -92,6 +94,7 @@ public class playerGridMovement : MonoBehaviour
                 Punishment();
             }
         }
+        isTimerWorking= false;
     }
     public void Punishment()
     {
