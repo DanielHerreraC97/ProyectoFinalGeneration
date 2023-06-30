@@ -43,14 +43,15 @@ public class Dice : MonoBehaviour {
 
     private IEnumerator RollTheDice()
     {
-      //  yield return new WaitForSeconds(timeToDelay);
-        
+        //  yield return new WaitForSeconds(timeToDelay);
+        Debug.Log("2");
         for (int i = 0; i <= 10; i++)
         {
             randomDiceSide = Random.Range(0, numberDiceFaces);
             rend.sprite = diceSides[randomDiceSide+1];
             yield return new WaitForSeconds(0.05f);
         }
+        Debug.Log("3");
         finalSide = randomDiceSide + 1;
         _playerGridMovement.stopTimer = true;
         StartCoroutine(_playerGridMovement.TimerActor());
@@ -61,9 +62,10 @@ public class Dice : MonoBehaviour {
         finalSide -= 1;
         lessSprite = finalSide;
         rend.sprite = diceSides[lessSprite];
-        if (finalSide == 0)
+        if (finalSide <= 0)
         {
             _playerGridMovement.stopTimer = false;
+            Debug.Log("1");
             StartCoroutine(RollTheDice());
         }
     }
