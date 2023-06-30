@@ -38,6 +38,7 @@ private void Start()
 
     public void Resume()
     {
+        AudioManager.Instance.PlaySFX("Botones");
         Pausemenu.gameObject.SetActive(false);
         Background.gameObject.SetActive(false);
         Time.timeScale = 1;
