@@ -83,11 +83,9 @@ public class playerGridMovement : MonoBehaviour
     }
     public IEnumerator TimerActor()
     {
-        timer -= Time.deltaTime;
         while (stopTimer)
         {
             timer -= Time.deltaTime;
-            //timerUI.text = timer.ToString("F2");
             yield return new WaitForSeconds(0);
             if (timer < 0)
             {
@@ -115,7 +113,7 @@ public class playerGridMovement : MonoBehaviour
         timer = resetTimer;
         restartEnemyDices?.Invoke();
         moveEnemies?.Invoke();
-    }
+;    }
 
     private bool CanItPunishmentInThatdirection(Vector3 directionToPunish)
     {
