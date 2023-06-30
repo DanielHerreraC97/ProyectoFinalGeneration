@@ -24,6 +24,7 @@ public class playerGridMovement : MonoBehaviour
     public bool stopTimer, playerHasntMove;
     public Transform[] randomSpots;
     private Rigidbody2D rb;
+    public bool isTimerWorking;
 
     [SerializeField] private Slider slider;
 
@@ -83,17 +84,17 @@ public class playerGridMovement : MonoBehaviour
     }
     public IEnumerator TimerActor()
     {
-        timer -= Time.deltaTime;
+        isTimerWorking= true;
         while (stopTimer)
         {
             timer -= Time.deltaTime;
-            //timerUI.text = timer.ToString("F2");
             yield return new WaitForSeconds(0);
             if (timer < 0)
             {
                 Punishment();
             }
         }
+        isTimerWorking= false;
     }
     public void Punishment()
     {
@@ -115,7 +116,7 @@ public class playerGridMovement : MonoBehaviour
         timer = resetTimer;
         restartEnemyDices?.Invoke();
         moveEnemies?.Invoke();
-    }
+;    }
 
     private bool CanItPunishmentInThatdirection(Vector3 directionToPunish)
     {
