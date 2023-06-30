@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class DicePlacement : MonoBehaviour
 {
-    public Image diceRenderer; // Referencia al componente SpriteRenderer del dado
-    public float offsetY = 1f; // Desplazamiento vertical ajustable
+    public Image diceRenderer; 
+    public float offsetY = 1f;
     private float diceScale = .5f;
 
-    private GameObject diceObject; // Referencia al objeto del dado
-    private SpriteRenderer diceSpriteRenderer; // Referencia al componente SpriteRenderer del dado
-    public EnemyDice diceScript; // Referencia al script EnemyDice
+    private GameObject diceObject;
+    private SpriteRenderer diceSpriteRenderer;
+    public EnemyDice diceScript;
 
     private void Start()
     {
