@@ -16,8 +16,14 @@ public class Sing : MonoBehaviour
     private bool isFirstImageShown = false;
     public float timeBetweenImages = 1f;
 
+    private GameObject player;
+    private playerGridMovement _playerGridMovement;
+
     private void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        _playerGridMovement = player.GetComponent<playerGridMovement>();
+
         DiagCanvas.gameObject.SetActive(false);
         Image1.gameObject.SetActive(false);
         Image2.gameObject.SetActive(false);
@@ -58,11 +64,13 @@ public class Sing : MonoBehaviour
             {
                 Tutorial.SetActive(true);
                 Time.timeScale = 0;
+                _playerGridMovement.DisableControls();
             }
             else
             {
                 Tutorial.SetActive(false);
-                Time.timeScale = 1  ;
+                Time.timeScale = 1;
+                _playerGridMovement.EnableControls();
             }
         }
     }

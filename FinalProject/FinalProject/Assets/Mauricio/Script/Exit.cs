@@ -37,20 +37,12 @@ public class Exit : MonoBehaviour
     {
         if (isInRange)
         {
-            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            string currentScene = SceneManager.GetActiveScene().name;
             Debug.Log("Esta en la escena" + SceneManager.GetActiveScene());
-            if (currentScene == 1)
+            if (currentScene == "Tutorial")
             {
                 Debug.Log("cambia");
-                SceneManager.LoadScene(2);
-            }
-            else if (currentScene == 2)
-            {
-                SceneManager.LoadScene(3);
-            }
-            else if (currentScene == 3)
-            {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene("BaseLevel1");
             }
         }
     }

@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     //MainMenu
     public GameObject Pausemenu, Settingsmenu, Background;
+    private bool OpenPause = false;
 
 private void Start()
     {
@@ -23,10 +24,11 @@ private void Start()
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        if(Input.GetKey(KeyCode.Escape) && OpenPause == false)
         {
             Pause();
             Time.timeScale = 0;
+            OpenPause = true;
         }
     }
 
@@ -42,6 +44,7 @@ private void Start()
         Pausemenu.gameObject.SetActive(false);
         Background.gameObject.SetActive(false);
         Time.timeScale = 1;
+        OpenPause = false;
     }
 
     public void OpenSettings()
