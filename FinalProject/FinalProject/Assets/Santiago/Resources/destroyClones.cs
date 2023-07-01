@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
 public class destroyClones : MonoBehaviour
 {
     private CreateDice _createDice;
-
     private void Start()
     {
         _createDice = GameObject.FindWithTag("Finish").GetComponent<CreateDice>();

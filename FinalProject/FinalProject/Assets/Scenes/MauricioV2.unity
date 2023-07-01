@@ -264,9 +264,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 144858324}
-  diceBattle: {fileID: 0}
 --- !u!50 &25920772
 Rigidbody2D:
   serializedVersion: 4
@@ -1716,7 +1716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51d3145a4593b64ead36f5ddb6f02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyObject: {fileID: 1410868883}
   diceRenderer: {fileID: 1774783725}
   offsetY: 1
   diceScript: {fileID: 1774783723}
@@ -2465,9 +2464,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 2261904775719949756}
-  diceBattle: {fileID: 0}
 --- !u!50 &308026321
 Rigidbody2D:
   serializedVersion: 4
@@ -4394,7 +4393,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 5.125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4609,9 +4608,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 144858324}
-  diceBattle: {fileID: 1626848144}
 --- !u!50 &547612798
 Rigidbody2D:
   serializedVersion: 4
@@ -4744,9 +4743,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 1982257528}
-  diceBattle: {fileID: 1626848144}
 --- !u!1 &555037427
 GameObject:
   m_ObjectHideFlags: 0
@@ -4953,9 +4952,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 2261904775719949756}
-  diceBattle: {fileID: 1626848144}
 --- !u!50 &580105168
 Rigidbody2D:
   serializedVersion: 4
@@ -5914,11 +5913,6 @@ PrefabInstance:
 --- !u!4 &647661696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4720871595166811439, guid: d15a95dce93bec942a096fa58b36080f, type: 3}
-  m_PrefabInstance: {fileID: 647661695}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &647661697 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4720871595166811409, guid: d15a95dce93bec942a096fa58b36080f, type: 3}
   m_PrefabInstance: {fileID: 647661695}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &659498798
@@ -7923,11 +7917,7 @@ MonoBehaviour:
   SFXSlider: {fileID: 2115207486}
   Pausemenu: {fileID: 695463556}
   Settingsmenu: {fileID: 755679069}
---- !u!1 &908668983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5379336857311735342, guid: dbdcfc689d48d7f4bb110eff87f28854, type: 3}
-  m_PrefabInstance: {fileID: 1924607982}
-  m_PrefabAsset: {fileID: 0}
+  Background: {fileID: 0}
 --- !u!4 &922046233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8721326712981942341, guid: b4f19998a6b83374eb274374fd81a3f7, type: 3}
@@ -8363,11 +8353,6 @@ MonoBehaviour:
   - {fileID: 1608230276}
   - {fileID: 1430868628}
   - {fileID: 2084351635}
---- !u!1 &971205950 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6700555335890518851, guid: edbd3b619c3a4ff4d9cbfa20cca005e2, type: 3}
-  m_PrefabInstance: {fileID: 359259901}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &998115818
 GameObject:
   m_ObjectHideFlags: 0
@@ -10202,9 +10187,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 1774783723}
-  diceBattle: {fileID: 1626848144}
 --- !u!50 &1273824180
 Rigidbody2D:
   serializedVersion: 4
@@ -11511,11 +11496,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1410868883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6584539189851292797, guid: 87f7e7f8400fe0841a5a80375be946ad, type: 3}
-  m_PrefabInstance: {fileID: 1967294546}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1410868884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3145694192410411217, guid: 87f7e7f8400fe0841a5a80375be946ad, type: 3}
@@ -12888,9 +12868,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 1982257528}
-  diceBattle: {fileID: 0}
 --- !u!50 &1576210359
 Rigidbody2D:
   serializedVersion: 4
@@ -13103,7 +13083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51d3145a4593b64ead36f5ddb6f02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyObject: {fileID: 908668983}
   diceRenderer: {fileID: 2261904775719949753}
   offsetY: 1
   diceScript: {fileID: 2261904775719949756}
@@ -13925,9 +13904,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 1774783723}
-  diceBattle: {fileID: 0}
 --- !u!50 &1648583414
 Rigidbody2D:
   serializedVersion: 4
@@ -15083,7 +15062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51d3145a4593b64ead36f5ddb6f02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyObject: {fileID: 647661697}
   diceRenderer: {fileID: 1982257530}
   offsetY: 1
   diceScript: {fileID: 1982257528}
@@ -15586,24 +15564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1808970940 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4452779427797827332, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
-  m_PrefabInstance: {fileID: 131511703}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1808970941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808970940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 874539383162b40ec9dcbd8b3fd30eae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemButton: {fileID: 6906304299778473856, guid: cf7ef0e642c3e43eba46fcec2b1164ca, type: 3}
 --- !u!1 &1818069230
 GameObject:
   m_ObjectHideFlags: 0
@@ -16251,7 +16211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51d3145a4593b64ead36f5ddb6f02d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyObject: {fileID: 971205950}
   diceRenderer: {fileID: 144858326}
   offsetY: 1
   diceScript: {fileID: 144858324}
@@ -16388,9 +16347,9 @@ MonoBehaviour:
   namePostionA: 1A
   namePositionB: 1B
   moveToA: 0
+  isItAlive: 0
   recall: 0
   _dice: {fileID: 1982257528}
-  diceBattle: {fileID: 1626848144}
 --- !u!50 &1865956102
 Rigidbody2D:
   serializedVersion: 4
