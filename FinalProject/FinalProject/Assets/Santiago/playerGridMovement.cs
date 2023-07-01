@@ -27,6 +27,7 @@ public class playerGridMovement : MonoBehaviour
     public bool isTimerWorking;
 
     [SerializeField] private Slider slider;
+    public Vector2 initialPosition, lastPosition;
 
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class playerGridMovement : MonoBehaviour
        controls.Main.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
        _dice = GameObject.FindWithTag("Dice").GetComponent<Dice>();
        stopTimer = false;
+        initialPosition = transform.position;
     }
     private void FixedUpdate()
     {
@@ -63,11 +65,14 @@ public class playerGridMovement : MonoBehaviour
         {
             //transform.position = Vector3.MoveTowards(transform.position, direction, 1f);
             rb.MovePosition(transform.position += (Vector3)direction);
+            initialPosition = lastPosition;
+            lastPosition= transform.position;
             _dice.NegativeCounter();
             restartEnemyDices?.Invoke();
             moveEnemies?.Invoke();
             timer = resetTimer;
             //slider.maxValue = resetTimer;
+
         }
     }
     private bool CanMove(Vector2 direction)
