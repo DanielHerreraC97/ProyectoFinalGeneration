@@ -7,13 +7,12 @@ public class PickUp : MonoBehaviour
 {
    private Inventory _inventory;
    public GameObject itemButton;
-
+   private gameManager _gameManager;
    private void Start()
    {
       _inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-      
+      _gameManager = GameObject.FindObjectOfType<gameManager>().GetComponent<gameManager>();
    }
-
    private void OnTriggerEnter2D(Collider2D other)
    {
       if (other.CompareTag("Player"))
@@ -24,6 +23,7 @@ public class PickUp : MonoBehaviour
             {
                _inventory.isFull[i] = true;
                _inventory.plusItem();
+               _gameManager.recollectedKey += 1;
                Instantiate(itemButton, _inventory.slots[i].transform, false); 
                Destroy(gameObject);
                break;
