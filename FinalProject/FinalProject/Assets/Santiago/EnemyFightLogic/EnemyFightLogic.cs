@@ -10,7 +10,11 @@ using UnityEngine.SceneManagement;
 public class EnemyFightLogic : MonoBehaviour
 {
     public int enemyEnergy;
+
+    private GameObject player;
     private playerGridMovement _playerGridMovement;
+
+    private Vector2 initialPosition, lastPosition;
 
     private static int ConditiontoWin;
 
@@ -22,7 +26,10 @@ public class EnemyFightLogic : MonoBehaviour
 
     private void Start()
     {
-        _playerGridMovement = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
+        player = GameObject.FindWithTag("Player");
+        _playerGridMovement = player.GetComponent<playerGridMovement>();
+        initialPosition = transform.position;
+        lastPosition = initialPosition;
     }
     private void Update()
     {
@@ -41,25 +48,67 @@ public class EnemyFightLogic : MonoBehaviour
             EnemyDeath = false;
             if (_playerGridMovement.recall > enemyEnergy)
             {
-                // enemyEnergy -= _playerGridMovement.recall;
-                // Destroy(gameObject,5f);
-                Debug.Log("player win");
-                //this.gameObject.SetActive(false);
-                ConditiontoWin++;
-                EnemyDeath = true;
-                StartCoroutine(WaitForDeathAnimation());
+                PlayerWin();
             }
 
             if (_playerGridMovement.recall <= enemyEnergy)
             {
-                //collision.gameObject.SetActive(false);
-                //Destroy(other.gameObject,5f);
-                Debug.Log("Player lose");
-                //SceneManager.LoadScene(2);
-                PlayerDeath = true;
-                StartCoroutine(WaitForDeathAnimation());
+            PlayerLost();
             }
         }
+    }
+
+    public void CheckCollisionWithPlayer()
+    {
+        lastPosition = transform.position;
+       // player.GetComponent<playerGridMovement>().lastPosition = player.transform.position;
+        Debug.Log(GetComponent<EnemyGridMovemtn>().enemyType + " enemy initial position " + initialPosition + "player last position " + player.GetComponent<playerGridMovement>().lastPosition);
+        Debug.Log(GetComponent<EnemyGridMovemtn>().enemyType + " enemy last position " + lastPosition + "player initial position " + player.GetComponent<playerGridMovement>().initialPosition);
+        if (initialPosition == player.GetComponent<playerGridMovement>().lastPosition && lastPosition == player.GetComponent<playerGridMovement>().initialPosition)
+        {
+            EnemyDeath = false;
+            if (_playerGridMovement.recall > enemyEnergy)
+            {
+                PlayerWin();
+            }
+
+            if (_playerGridMovement.recall <= enemyEnergy)
+            {
+                PlayerLost();
+            }
+        }
+
+        initialPosition = lastPosition;
+        //player.GetComponent<playerGridMovement>().initialPosition = player.GetComponent<playerGridMovement>().lastPosition;
+
+
+    }
+
+
+    public void PlayerWin()
+    {
+        // enemyEnergy -= _playerGridMovement.recall;
+        // Destroy(gameObject,5f);
+        Debug.Log("player win");
+        //this.gameObject.SetActive(false);
+        ConditiontoWin++;
+        GetComponent<EnemyGridMovemtn>().isItAlive= false;
+        EnemyDeath = true;
+
+        StartCoroutine(WaitForDeathAnimation());
+    }
+
+    public void PlayerLost()
+    {
+        //collision.gameObject.SetActive(false);
+        //Destroy(other.gameObject,5f);
+        Debug.Log("Player lose");
+        //SceneManager.LoadScene(2);
+        PlayerDeath = true;
+        _playerGridMovement.DisableControls();
+        _playerGridMovement.restartEnemyDices?.Invoke();
+        _playerGridMovement.moveEnemies?.Invoke();
+        StartCoroutine(WaitForDeathAnimation());
     }
 
     private IEnumerator WaitForDeathAnimation()
@@ -68,7 +117,7 @@ public class EnemyFightLogic : MonoBehaviour
         {
             enemyAnimator.SetTrigger("IsDeath");
             //AudioManager.Instance.PlaySFX("DeathM");
-            float tiempoEsperaE = 2.0f;
+            float tiempoEsperaE = 2f;
             yield return new WaitForSecondsRealtime(tiempoEsperaE);
             gameObject.SetActive(false);
         }

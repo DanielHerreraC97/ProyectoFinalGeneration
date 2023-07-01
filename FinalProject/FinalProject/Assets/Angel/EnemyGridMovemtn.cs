@@ -19,11 +19,12 @@ public class EnemyGridMovemtn : MonoBehaviour
     [SerializeField] private string namePostionA, namePositionB;
     [SerializeField] private bool moveToA;
 
+    public bool isItAlive;
+
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
     private Rigidbody2D rigidbody2DEnemie;
     private Vector2 movement;
-
 
     //dice parameters 
     public int recall;
@@ -32,6 +33,7 @@ public class EnemyGridMovemtn : MonoBehaviour
  private Rigidbody2D rb;
 
     private playerGridMovement player;
+   
 
     private void Awake()
     {
@@ -39,9 +41,10 @@ public class EnemyGridMovemtn : MonoBehaviour
         boxCollider2D= GetComponent<BoxCollider2D>();
         rigidbody2DEnemie= GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
-        player.moveEnemies.AddListener(MoveThisEnemy);
+       player = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
+       player.moveEnemies.AddListener(MoveThisEnemy);
         DefineINicialMovementObjective();
+        isItAlive= true;
     }
 
     private void Update()
@@ -51,23 +54,28 @@ public class EnemyGridMovemtn : MonoBehaviour
 
     public void MoveThisEnemy()
     {
-        switch(enemyType)
-        { case EnemyType.horizontal:
-                HorizontalMovement();
-                break; 
-          case EnemyType.vertical:
-                VerticalMovement();
-                break;
-          case EnemyType.DiagonalLefttoRigth:
-                DiagonalLeftToRigthMovement();
-                break;
-          case EnemyType.DiagonalRighttoLeft:
-                DiagonalRigthToLeftMovement();
-                break;
+        if (isItAlive)
+        {
+            switch (enemyType)
+            {
+                case EnemyType.horizontal:
+                    HorizontalMovement();
+                    break;
+                case EnemyType.vertical:
+                    VerticalMovement();
+                    break;
+                case EnemyType.DiagonalLefttoRigth:
+                    DiagonalLeftToRigthMovement();
+                    break;
+                case EnemyType.DiagonalRighttoLeft:
+                    DiagonalRigthToLeftMovement();
+                    break;
+            }
+
+            GetComponent<EnemyFightLogic>().CheckCollisionWithPlayer();
+
+            _dice.NegativeCounter();
         }
-
-
-        _dice.NegativeCounter();
     }
 
     private void DefineINicialMovementObjective()
@@ -173,7 +181,6 @@ public class EnemyGridMovemtn : MonoBehaviour
     {
         if (CanMove(direction) && recall > 0)
         {
-            //transform.position = Vector3.MoveTowards(transform.position, direction, 1f);
             rb.MovePosition(transform.position += (Vector3)direction);
             if (_dice.finalSide == 0)
             {
@@ -195,6 +202,7 @@ public class EnemyGridMovemtn : MonoBehaviour
         }
     }
 
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == namePostionA)
@@ -206,13 +214,5 @@ public class EnemyGridMovemtn : MonoBehaviour
         {
             moveToA = true;
         }
-
-     /*   if (collision.CompareTag("Player"))
-        {
-            Debug.Log("Batalla");
-            diceBattle.Battle();
-        }
-     
-     */
     }
 }

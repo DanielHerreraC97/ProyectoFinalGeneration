@@ -12,12 +12,13 @@ public class PauseMenu : MonoBehaviour
     public Slider MusicSlider, SFXSlider;
 
     //MainMenu
-    public GameObject Pausemenu, Settingsmenu;
+    public GameObject Pausemenu, Settingsmenu, Background;
 
-    private void Start()
+private void Start()
     {
         Pausemenu.gameObject.SetActive(false);
         Settingsmenu.gameObject.SetActive(false);
+        Background.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -32,11 +33,14 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         Pausemenu.gameObject.SetActive(true);
+        Background.gameObject.SetActive(true);
     }
 
     public void Resume()
     {
+        AudioManager.Instance.PlaySFX("Botones");
         Pausemenu.gameObject.SetActive(false);
+        Background.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 
