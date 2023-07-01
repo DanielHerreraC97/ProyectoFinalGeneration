@@ -106,6 +106,8 @@ public class EnemyFightLogic : MonoBehaviour
         //SceneManager.LoadScene(2);
         PlayerDeath = true;
         _playerGridMovement.DisableControls();
+        _playerGridMovement.restartEnemyDices?.Invoke();
+        _playerGridMovement.moveEnemies?.Invoke();
         StartCoroutine(WaitForDeathAnimation());
     }
 
@@ -115,7 +117,7 @@ public class EnemyFightLogic : MonoBehaviour
         {
             enemyAnimator.SetTrigger("IsDeath");
             //AudioManager.Instance.PlaySFX("DeathM");
-            float tiempoEsperaE = 2.0f;
+            float tiempoEsperaE = 2f;
             yield return new WaitForSecondsRealtime(tiempoEsperaE);
             gameObject.SetActive(false);
         }
