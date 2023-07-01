@@ -36,11 +36,15 @@ public class playerGridMovement : MonoBehaviour
     }
     private void OnEnable()
     {
-        controls.Enable();
+        EnableControls();
     }
     private void OnDisable()
     {
         DisableControls();
+    }
+    public void EnableControls()
+    {
+        controls.Enable();
     }
 public void DisableControls()
     {
