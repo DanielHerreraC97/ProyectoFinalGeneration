@@ -19,6 +19,8 @@ public class EnemyGridMovemtn : MonoBehaviour
     [SerializeField] private string namePostionA, namePositionB;
     [SerializeField] private bool moveToA;
 
+    public bool isItAlive;
+
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
     private Rigidbody2D rigidbody2DEnemie;
@@ -42,6 +44,7 @@ public class EnemyGridMovemtn : MonoBehaviour
        player = GameObject.FindWithTag("Player").GetComponent<playerGridMovement>();
        player.moveEnemies.AddListener(MoveThisEnemy);
         DefineINicialMovementObjective();
+        isItAlive= true;
     }
 
     private void Update()
@@ -51,25 +54,28 @@ public class EnemyGridMovemtn : MonoBehaviour
 
     public void MoveThisEnemy()
     {
+        if (isItAlive)
+        {
+            switch (enemyType)
+            {
+                case EnemyType.horizontal:
+                    HorizontalMovement();
+                    break;
+                case EnemyType.vertical:
+                    VerticalMovement();
+                    break;
+                case EnemyType.DiagonalLefttoRigth:
+                    DiagonalLeftToRigthMovement();
+                    break;
+                case EnemyType.DiagonalRighttoLeft:
+                    DiagonalRigthToLeftMovement();
+                    break;
+            }
 
-        switch(enemyType)
-        { case EnemyType.horizontal:
-                HorizontalMovement();
-                break; 
-          case EnemyType.vertical:
-                VerticalMovement();
-                break;
-          case EnemyType.DiagonalLefttoRigth:
-                DiagonalLeftToRigthMovement();
-                break;
-          case EnemyType.DiagonalRighttoLeft:
-                DiagonalRigthToLeftMovement();
-                break;
+            GetComponent<EnemyFightLogic>().CheckCollisionWithPlayer();
+
+            _dice.NegativeCounter();
         }
-
-        GetComponent<EnemyFightLogic>().CheckCollisionWithPlayer();
-
-        _dice.NegativeCounter();
     }
 
     private void DefineINicialMovementObjective()

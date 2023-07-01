@@ -40,6 +40,10 @@ public class playerGridMovement : MonoBehaviour
     }
     private void OnDisable()
     {
+        DisableControls();
+    }
+public void DisableControls()
+    {
         controls.Disable();
     }
     void Start()

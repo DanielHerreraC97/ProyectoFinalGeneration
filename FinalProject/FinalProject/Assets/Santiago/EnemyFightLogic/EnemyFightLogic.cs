@@ -92,7 +92,9 @@ public class EnemyFightLogic : MonoBehaviour
         Debug.Log("player win");
         //this.gameObject.SetActive(false);
         ConditiontoWin++;
+        GetComponent<EnemyGridMovemtn>().isItAlive= false;
         EnemyDeath = true;
+
         StartCoroutine(WaitForDeathAnimation());
     }
 
@@ -103,6 +105,7 @@ public class EnemyFightLogic : MonoBehaviour
         Debug.Log("Player lose");
         //SceneManager.LoadScene(2);
         PlayerDeath = true;
+        _playerGridMovement.DisableControls();
         StartCoroutine(WaitForDeathAnimation());
     }
 
