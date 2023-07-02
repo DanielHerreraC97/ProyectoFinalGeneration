@@ -7,7 +7,7 @@ public class GridIncrease : SpecialGrid
     [SerializeField] private int ActionPointsToIncrease;
     private new void ActivateEffect()
     {
-        _dice.IncreaseCounter(ActionPointsToIncrease);
+        _dice.IncreaseCounter(ActionPointsToIncrease+1);
         Debug.Log("reduce " + ActionPointsToIncrease);
 
     }

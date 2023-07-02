@@ -7,7 +7,7 @@ public class GridLosePoints : SpecialGrid
     [SerializeField] private int ActionPointsToReduce;
   private new void ActivateEffect()
     {
-        _dice.NegativeCounter(ActionPointsToReduce);
+        _dice.NegativeCounter(ActionPointsToReduce-1);
         Debug.Log("reduce " + ActionPointsToReduce);
         
     }
