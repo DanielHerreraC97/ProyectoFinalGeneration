@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class SpecialGrid : MonoBehaviour
 {
-    private playerGridMovement _playerGridMovement;
-    private Dice _dice;
+
+    protected playerGridMovement _playerGridMovement;
+    protected Dice _dice;
 
     private void Start()
     {
@@ -14,12 +16,16 @@ public class SpecialGrid : MonoBehaviour
         _dice = GameObject.FindWithTag("Dice").GetComponent<Dice>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected void ActivateEffect()
+    {
+
+    }
+
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            _playerGridMovement.Punishment();
-            Destroy(this.gameObject);
+            ActivateEffect();
         }
     }
 }

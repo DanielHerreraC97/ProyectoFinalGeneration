@@ -59,9 +59,9 @@ public class Dice : MonoBehaviour {
             StartCoroutine(_playerGridMovement.TimerActor());
         }
     }
-    public void NegativeCounter()
+    public void NegativeCounter(int pointsToReduce = 1)
     {
-        finalSide -= 1;
+        finalSide -= pointsToReduce;
         lessSprite = finalSide;
         rend.sprite = diceSides[lessSprite];
         if (finalSide <= 0)
