@@ -61,10 +61,7 @@ public class EnemyFightLogic : MonoBehaviour
     public void CheckCollisionWithPlayer()
     {
         lastPosition = transform.position;
-       // player.GetComponent<playerGridMovement>().lastPosition = player.transform.position;
-        Debug.Log(GetComponent<EnemyGridMovemtn>().enemyType + " enemy initial position " + initialPosition + "player last position " + player.GetComponent<playerGridMovement>().lastPosition);
-        Debug.Log(GetComponent<EnemyGridMovemtn>().enemyType + " enemy last position " + lastPosition + "player initial position " + player.GetComponent<playerGridMovement>().initialPosition);
-        if (initialPosition == player.GetComponent<playerGridMovement>().lastPosition && lastPosition == player.GetComponent<playerGridMovement>().initialPosition)
+       if (initialPosition == player.GetComponent<playerGridMovement>().lastPosition && lastPosition == player.GetComponent<playerGridMovement>().initialPosition)
         {
             EnemyDeath = false;
             if (_playerGridMovement.recall > enemyEnergy)
@@ -79,18 +76,12 @@ public class EnemyFightLogic : MonoBehaviour
         }
 
         initialPosition = lastPosition;
-        //player.GetComponent<playerGridMovement>().initialPosition = player.GetComponent<playerGridMovement>().lastPosition;
-
-
     }
 
 
     public void PlayerWin()
     {
-        // enemyEnergy -= _playerGridMovement.recall;
-        // Destroy(gameObject,5f);
         Debug.Log("player win");
-        //this.gameObject.SetActive(false);
         ConditiontoWin++;
         GetComponent<EnemyGridMovemtn>().isItAlive= false;
         EnemyDeath = true;
@@ -100,10 +91,6 @@ public class EnemyFightLogic : MonoBehaviour
 
     public void PlayerLost()
     {
-        //collision.gameObject.SetActive(false);
-        //Destroy(other.gameObject,5f);
-        Debug.Log("Player lose");
-        //SceneManager.LoadScene(2);
         PlayerDeath = true;
         _playerGridMovement.DisableControls();
         _playerGridMovement.restartEnemyDices?.Invoke();
