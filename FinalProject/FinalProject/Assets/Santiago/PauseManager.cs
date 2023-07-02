@@ -8,6 +8,7 @@ public class PauseManager : MonoBehaviour
    public static bool paused = false;
    private PauseAction action;
    public GameObject _menu;
+
    private void Awake()
    {
       action = new PauseAction();

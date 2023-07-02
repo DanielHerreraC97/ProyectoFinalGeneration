@@ -15,8 +15,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject Pausemenu, Settingsmenu, Background;
     private bool OpenPause = false;
 
-private void Start()
+    private GameObject player;
+    private playerGridMovement _playerGridMovement;
+
+    private void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        _playerGridMovement = player.GetComponent<playerGridMovement>();
+
         Pausemenu.gameObject.SetActive(false);
         Settingsmenu.gameObject.SetActive(false);
         Background.gameObject.SetActive(false);
@@ -29,6 +35,7 @@ private void Start()
             Pause();
             Time.timeScale = 0;
             OpenPause = true;
+            _playerGridMovement.DisableControls();
         }
     }
 
@@ -45,6 +52,7 @@ private void Start()
         Background.gameObject.SetActive(false);
         Time.timeScale = 1;
         OpenPause = false;
+        _playerGridMovement.EnableControls();
     }
 
     public void OpenSettings()
