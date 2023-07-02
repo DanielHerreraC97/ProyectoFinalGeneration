@@ -3761,7 +3761,7 @@ Tilemap:
       - {fileID: -1442084558, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: 99900419, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: -2140991730, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -5105,7 +5105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0.5, z: -10}
+  m_LocalPosition: {x: 11.5, y: 21.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66718,7 +66718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800711039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0.5, z: -10}
+  m_LocalPosition: {x: 11.5, y: 21.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68979,11 +68979,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 207712869943740254, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 207712869943740254, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 207712869943740254, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69019,16 +69019,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 207712869943740255, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: m_Name
-      value: SpiderRL
+      value: SpiderLR
+      objectReference: {fileID: 0}
+    - target: {fileID: 207712870691671925, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 207712870691671925, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 207712870942322893, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: diceScript
       value: 
-      objectReference: {fileID: 352564816}
+      objectReference: {fileID: 271761212}
     - target: {fileID: 207712870942322893, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: diceRenderer
       value: 
-      objectReference: {fileID: 352564818}
+      objectReference: {fileID: 271761214}
     - target: {fileID: 207712870953051362, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: playerAnimator
       value: 
@@ -69036,7 +69044,7 @@ PrefabInstance:
     - target: {fileID: 207712870953051374, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: _dice
       value: 
-      objectReference: {fileID: 352564816}
+      objectReference: {fileID: 271761212}
     - target: {fileID: 207712870953051374, guid: c0d120dc4c4738b4f9e11c0b1cef4e95, type: 3}
       propertyPath: floor
       value: 
@@ -69918,11 +69926,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2584297961383436125, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 2584297961383436125, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 21.5
       objectReference: {fileID: 0}
     - target: {fileID: 2584297961383436125, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69976,7 +69984,7 @@ PrefabInstance:
     - target: {fileID: 2997427695549905911, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: _dice
       value: 
-      objectReference: {fileID: 271761212}
+      objectReference: {fileID: 352564816}
     - target: {fileID: 2997427695549905911, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: floor
       value: 
@@ -69988,22 +69996,22 @@ PrefabInstance:
     - target: {fileID: 2997427695984180869, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: diceScript
       value: 
-      objectReference: {fileID: 271761212}
+      objectReference: {fileID: 352564816}
     - target: {fileID: 2997427695984180869, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: diceRenderer
       value: 
-      objectReference: {fileID: 271761214}
+      objectReference: {fileID: 352564818}
     - target: {fileID: 2997427696320135620, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2997427696320135620, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2997427696320135620, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2997427696320135620, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: m_LocalPosition.z
@@ -70039,7 +70047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2997427696320135643, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
       propertyPath: m_Name
-      value: SpiderLR
+      value: SpiderRL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf6481cee8a6544f8b06e4f5b2b8b16, type: 3}
@@ -70287,7 +70295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8176897665280396929, guid: 46db5a07885d11649aa3028f7796cb87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8176897665280396929, guid: 46db5a07885d11649aa3028f7796cb87, type: 3}
       propertyPath: m_LocalPosition.z
