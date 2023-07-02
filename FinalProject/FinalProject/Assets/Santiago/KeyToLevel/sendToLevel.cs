@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class sendToLevel : MonoBehaviour
 {
@@ -24,10 +21,8 @@ public class sendToLevel : MonoBehaviour
             letter.SetActive(true);
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         letter.SetActive(false);
     }
-    
 }
