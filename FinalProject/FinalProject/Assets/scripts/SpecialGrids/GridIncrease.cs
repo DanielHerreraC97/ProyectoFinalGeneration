@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridLosePoints : SpecialGrid
+public class GridIncrease : SpecialGrid
 {
-    [SerializeField] private int ActionPointsToReduce;
-  private new void ActivateEffect()
+    [SerializeField] private int ActionPointsToIncrease;
+    private new void ActivateEffect()
     {
-        _dice.NegativeCounter(ActionPointsToReduce);
-        Debug.Log("reduce " + ActionPointsToReduce);
-        
+        _dice.IncreaseCounter(ActionPointsToIncrease);
+        Debug.Log("reduce " + ActionPointsToIncrease);
+
     }
 
     protected new void OnTriggerEnter2D(Collider2D other)
