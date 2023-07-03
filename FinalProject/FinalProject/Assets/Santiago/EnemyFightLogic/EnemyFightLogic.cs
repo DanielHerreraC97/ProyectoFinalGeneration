@@ -73,11 +73,6 @@ public class EnemyFightLogic : MonoBehaviour
     public void PlayerWin()
     {
         Debug.Log("player win");
-<<<<<<< HEAD
-        ConditiontoWin++;
-=======
-        //this.gameObject.SetActive(false);
->>>>>>> Mauricio
         GetComponent<EnemyGridMovemtn>().isItAlive= false;
         EnemyDeath = true;
 
