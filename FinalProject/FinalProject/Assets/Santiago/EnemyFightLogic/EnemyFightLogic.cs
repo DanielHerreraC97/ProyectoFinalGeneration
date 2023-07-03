@@ -16,9 +16,6 @@ public class EnemyFightLogic : MonoBehaviour
 
     private Vector2 initialPosition, lastPosition;
 
-    private static int ConditiontoWin;
-
-
     public Animator enemyAnimator;
     public Animator playerAnimator;
     private bool PlayerDeath = false;
@@ -34,12 +31,6 @@ public class EnemyFightLogic : MonoBehaviour
     private void Update()
     {
         enemyEnergy = GetComponent<EnemyGridMovemtn>().recall;
-
-        Debug.Log("enemigos muertos: " + ConditiontoWin);
-        if (ConditiontoWin == 4)
-        {
-            SceneManager.LoadScene(5);
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -82,7 +73,11 @@ public class EnemyFightLogic : MonoBehaviour
     public void PlayerWin()
     {
         Debug.Log("player win");
+<<<<<<< HEAD
         ConditiontoWin++;
+=======
+        //this.gameObject.SetActive(false);
+>>>>>>> Mauricio
         GetComponent<EnemyGridMovemtn>().isItAlive= false;
         EnemyDeath = true;
 
