@@ -34,7 +34,7 @@ public class MainMenu : MonoBehaviour
         }
         else if (TutorialComplete == true)
         {
-            SceneManager.LoadScene("BaseLevel 1");
+            SceneManager.LoadScene("BaseLevel");
         }
     }
 
