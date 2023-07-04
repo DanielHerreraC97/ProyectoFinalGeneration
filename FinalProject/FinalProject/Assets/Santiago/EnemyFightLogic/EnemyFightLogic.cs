@@ -105,7 +105,7 @@ public class EnemyFightLogic : MonoBehaviour
             AudioManager.Instance.PlaySFX("DeathP");
             float tiempoEsperaP = 2.0f;
             yield return new WaitForSecondsRealtime(tiempoEsperaP);
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
