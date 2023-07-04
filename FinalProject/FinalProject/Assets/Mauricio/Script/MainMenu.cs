@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     //MainMenu
     public GameObject Mainmenu, Settingsmenu, Creditsmenu;
 
-    private bool TutorialComplete;
+    public static bool TutorialComplete { get; set; } = false;
 
     private void Start()
     {
@@ -27,14 +27,14 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         AudioManager.Instance.PlaySFX("Botones");
-        if (TutorialComplete == false)
+        if (!MainMenu.TutorialComplete)
         {
             SceneManager.LoadScene("Tutorial");
-            TutorialComplete = true;
+            MainMenu.TutorialComplete = true;
         }
-        else if (TutorialComplete == true)
+        else
         {
-            SceneManager.LoadScene("BaseLevel 1");
+            SceneManager.LoadScene("BaseLevel");
         }
     }
 
