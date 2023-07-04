@@ -72,6 +72,7 @@ public class Decision : MonoBehaviour
         {
             string nivelAScena = Stairs.activeStairs.nivelAScena;
             SceneManager.LoadScene(nivelAScena);
+            Time.timeScale = 1;
         }
     }
 
