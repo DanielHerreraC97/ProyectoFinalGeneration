@@ -530,7 +530,7 @@ Transform:
   - {fileID: 911760950}
   - {fileID: 1058262054}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &27641761
 GameObject:
@@ -1809,7 +1809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2962,8 +2962,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: '"Zone of Decreases": Identified by the color orange, it decreases your
+    action points by a specific amount.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -3040,6 +3040,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222822278}
   m_CullTransparentMesh: 1
+--- !u!1001 &233668388
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.492744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.542069
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745572, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4531756627866745577, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
+      propertyPath: m_Name
+      value: GridReducer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b255fdcf47e32e34e83d894b72c9e0c6, type: 3}
 --- !u!1 &250520970 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3415525008881258121, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
@@ -4797,8 +4854,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: In this world, the combat occurs when two creatures occupy the same square.
+    The creature with fewer action points at that moment dies. In the case of ties,
+    warriors like you are doomed to lose for venturing into the temple of the God
+    of Chance.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -5085,8 +5144,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: '"Zone of Increases": Identified by the color blue, it increases your action
+    points by a specific amount.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -24461,7 +24520,7 @@ Transform:
   - {fileID: 2142551856}
   - {fileID: 1398478418}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450969934
 GameObject:
@@ -25021,7 +25080,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -25045,7 +25104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 0.5, z: -10}
+  m_LocalPosition: {x: -7.5, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26335,7 +26394,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619569856
 GameObject:
@@ -26407,7 +26466,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619733606
 GameObject:
@@ -27033,9 +27092,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Even though I am much stronger than them. I am determined to change this
-    destiny and for this I will use the relics that are kept in an ancient complex
-    of temples dedicated to this God. '
+  m_text: Even though I am much stronger than them. I am determined to change this
+    destiny. The legend says this temple has the "Relics of Luck" than can be useful
+    to escape the chains of chance.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -27155,7 +27214,7 @@ Transform:
   - {fileID: 1231791910}
   - {fileID: 941866737}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672022883
 GameObject:
@@ -28017,9 +28076,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The God of Chance controls every living creature through the dice of destiny,
-    I am tired of submitting to the will of creatures inferior to me in a universe
-    that is governed by this condition. '
+  m_text: 'The God of Chance controls every living creature through the dices of
+    destiny, I am tired of submitting to the will of creatures inferior to me in
+    a universe that is governed by this condition. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -28821,8 +28880,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: The key to surviving in this temple lies in designing strategies to move
+    in order to avoid as many combats as possible. Since your existence is governed
+    by chance, you could lose a battle at any moment!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -29133,7 +29193,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812830072
 GameObject:
@@ -29269,8 +29329,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: '"Zone of Enemy Movement": Identified by the color brown, it moves the
+    enemies in their advancing direction a certain number of action points.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -30008,7 +30068,7 @@ RectTransform:
   m_Children:
   - {fileID: 1058244811}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -30673,8 +30733,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: In the event of a confrontation, the creature with the higher amount of
-    action points will win instantly.
+  m_text: I must navigate through the different levels that make up this temple of
+    the God of Chance in order to collect the so-called "Relics of Luck." With them,
+    I will be able to escape from the lower levels of this world and challenge this
+    wicked God!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -33525,7 +33587,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154455285
 GameObject:
@@ -58769,7 +58831,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1297749593
 MonoBehaviour:
@@ -58917,8 +58979,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: '"Zone of Reset": Identified by the color pink, it resets the action points
+    of your dice. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -59152,6 +59214,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1331249624
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4891810646237594976, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_Name
+      value: GridRestart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.535765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.45304626
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891810646237594989, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f58e884ec24fdba4eb580f74a82372cb, type: 3}
 --- !u!1 &1335040495
 GameObject:
   m_ObjectHideFlags: 0
@@ -59325,8 +59444,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: These entrances lead you to other levels. Make sure to thoroughly explore
+    all levels of the temple. Remember, the most important thing to free yourself
+    from the chains of the God of Chance is to obtain all the "Relics of Luck."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -59500,8 +59620,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There are different entrances in this underground temple that lead to other
-    chambers.
+  m_text: In this temple, certain specific locations have been imbued with the power
+    of the God of Chance, so landing on them can have different effects. Legend speaks
+    of four different types of outcomes when adventurers pass over these locations.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -59636,8 +59757,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Remember that your action points determine the strength you have to face
-    an enemy.
+  m_text: In this universe, all creatures are bound by a countdown imposed by the
+    God of Chance, which makes us spend one action point every 10 seconds in a random
+    direction if we remain still. We are slaves to this twisted will!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -61454,8 +61576,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You must devise strategies to move, in order to avoid as many enemies as
-    possible and collect lucky relics.
+  m_text: You must move over the "Relics of Luck" present in each level in order
+    to collect them. These artifacts will allow you to progress through the different
+    levels until you reach the end of this temple.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
   m_sharedMaterial: {fileID: -6724974570417345026, guid: e4b6c2bc2e4bd4182b95fcbd1266f47a, type: 2}
@@ -61870,7 +61993,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1513009406
 MonoBehaviour:
@@ -61984,7 +62107,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520280725
 GameObject:
@@ -62297,6 +62420,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535125576}
   m_CullTransparentMesh: 1
+--- !u!1001 &1542529326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6648390260234165554, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_Name
+      value: GridIncrease
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 31.469261
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648390260234165567, guid: db586146737ad474ab5077055fc1e908, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db586146737ad474ab5077055fc1e908, type: 3}
 --- !u!1 &1543307389
 GameObject:
   m_ObjectHideFlags: 0
@@ -62738,6 +62918,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555580965}
   m_CullTransparentMesh: 1
+--- !u!1001 &1569492874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.492744
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.4862982
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106624, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 329969917644106637, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
+      propertyPath: m_Name
+      value: GridToMoveEnemies
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f808cfa81c7a41c4b877aa7c5d0a0dee, type: 3}
 --- !u!114 &1576210364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64549,7 +64786,7 @@ Transform:
   - {fileID: 414442002}
   - {fileID: 1800711041}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1744448683
 GameObject:
@@ -65611,7 +65848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800711039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 0.5, z: -10}
+  m_LocalPosition: {x: -7.5, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67091,7 +67328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4452779427797827386, guid: f5d509e8e74fa426cb94f04bfc54dc7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68439,7 +68676,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017798073
 GameObject:
@@ -69595,11 +69832,11 @@ PrefabInstance:
       objectReference: {fileID: 755037821}
     - target: {fileID: 2584297961383436125, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2584297961383436125, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2584297961383436125, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: m_LocalPosition.y
