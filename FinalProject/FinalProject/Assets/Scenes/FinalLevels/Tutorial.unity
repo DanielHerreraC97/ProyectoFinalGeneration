@@ -3927,7 +3927,7 @@ PrefabInstance:
     - target: {fileID: 3415525008881258119, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: playerAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042044853}
     - target: {fileID: 3415525008881258120, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -23253,7 +23253,7 @@ Tilemap:
       - {fileID: -1442084558, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: 99900419, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: -2140991730, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 61, y: -3, z: 0}
@@ -26368,6 +26368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Decision: {fileID: 2086291518}
+  nivelAScena: BaseLevel
 --- !u!61 &619569858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31743,7 +31744,7 @@ PrefabInstance:
     - target: {fileID: 3415525008881258119, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: playerAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042044853}
     - target: {fileID: 3415525008881258120, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -66660,7 +66661,7 @@ PrefabInstance:
     - target: {fileID: 3415525008881258119, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: playerAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042044853}
     - target: {fileID: 3415525008881258120, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -67559,7 +67560,7 @@ PrefabInstance:
     - target: {fileID: 3415525008881258119, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: playerAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042044853}
     - target: {fileID: 3415525008881258120, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -67699,7 +67700,7 @@ PrefabInstance:
     - target: {fileID: 3415525008881258119, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: playerAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042044853}
     - target: {fileID: 3415525008881258120, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -68730,6 +68731,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034396521}
   m_CullTransparentMesh: 1
+--- !u!95 &2042044853 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5111459410554778753, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
+  m_PrefabInstance: {fileID: 2584297962110352116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2054359346
 GameObject:
   m_ObjectHideFlags: 0
@@ -69677,7 +69683,7 @@ PrefabInstance:
     - target: {fileID: 3415525008881258119, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: playerAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2042044853}
     - target: {fileID: 3415525008881258120, guid: 6136648f16db9eb408680e4504a6b769, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
