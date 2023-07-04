@@ -59,9 +59,10 @@ public class Dice : MonoBehaviour {
             StartCoroutine(_playerGridMovement.TimerActor());
         }
     }
-    public void NegativeCounter()
+    public void NegativeCounter(int pointsToReduce = 1)
     {
-        finalSide -= 1;
+        finalSide -= pointsToReduce;
+        if(finalSide <= 0 ) finalSide= 0;
         lessSprite = finalSide;
         rend.sprite = diceSides[lessSprite];
         if (finalSide <= 0)
@@ -70,5 +71,13 @@ public class Dice : MonoBehaviour {
             Debug.Log("1");
             StartCoroutine(RollTheDice());
         }
+    }
+
+    public void IncreaseCounter(int pointsToIncrease)
+    {
+        finalSide += pointsToIncrease;
+        if (finalSide >= 20) finalSide = 20;
+        lessSprite = finalSide;
+        rend.sprite = diceSides[lessSprite];
     }
 }

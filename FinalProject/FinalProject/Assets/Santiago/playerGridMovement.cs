@@ -20,12 +20,15 @@ public class playerGridMovement : MonoBehaviour
     public float timer;
     public float resetTimer;
     //public TMP_Text timerUI;
+
     public bool stopTimer, playerHasntMove;
     public Transform[] randomSpots;
     private Rigidbody2D rb;
     public bool isTimerWorking;
+
     [SerializeField] private Slider slider;
     public Vector2 initialPosition, lastPosition;
+
     private void Awake()
     {
         controls = new PlayerController();
@@ -33,13 +36,17 @@ public class playerGridMovement : MonoBehaviour
     }
     private void OnEnable()
     {
-        controls.Enable();
+        EnableControls();
     }
     private void OnDisable()
     {
         DisableControls();
     }
-    public void DisableControls()
+    public void EnableControls()
+    {
+        controls.Enable();
+    }
+public void DisableControls()
     {
         controls.Disable();
     }
@@ -73,6 +80,7 @@ public class playerGridMovement : MonoBehaviour
             moveEnemies?.Invoke();
             timer = resetTimer;
             //slider.maxValue = resetTimer;
+
         }
     }
     private bool CanMove(Vector2 direction)
@@ -108,17 +116,21 @@ public class playerGridMovement : MonoBehaviour
         Vector3 punishDirection;
         do
         {
+        
             punishDirection = randomSpots[Random.Range(0, 4)].position;
+
             canPunish = CanItPunishmentInThatdirection(punishDirection);
         }
-        while(canPunish == false );
-        // transform.position = Vector3.MoveTowards(transform.position, punishDirection, 1f);
+            while(canPunish == false );
+
+       // transform.position = Vector3.MoveTowards(transform.position, punishDirection, 1f);
         transform.position = punishDirection;
         _dice.NegativeCounter();
         timer = resetTimer;
         restartEnemyDices?.Invoke();
         moveEnemies?.Invoke();
 ;    }
+
     private bool CanItPunishmentInThatdirection(Vector3 directionToPunish)
     {
         Vector3Int gridPosition = floor.WorldToCell(directionToPunish);

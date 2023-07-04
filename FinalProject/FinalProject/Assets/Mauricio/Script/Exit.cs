@@ -9,8 +9,14 @@ public class Exit : MonoBehaviour
 
     private bool isInRange = false;
 
+    private GameObject player;
+    private playerGridMovement _playerGridMovement;
+
     private void Start()
     {
+        player = GameObject.FindWithTag("Player");
+        _playerGridMovement = player.GetComponent<playerGridMovement>();
+
         Decision.gameObject.SetActive(false);
     }
 
@@ -21,6 +27,7 @@ public class Exit : MonoBehaviour
             Debug.Log("Denreo");
             isInRange = true;
             Decision.gameObject.SetActive(true);
+            _playerGridMovement.DisableControls();
         }
     }
 
@@ -37,20 +44,12 @@ public class Exit : MonoBehaviour
     {
         if (isInRange)
         {
-            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            string currentScene = SceneManager.GetActiveScene().name;
             Debug.Log("Esta en la escena" + SceneManager.GetActiveScene());
-            if (currentScene == 1)
+            if (currentScene == "Tutorial")
             {
                 Debug.Log("cambia");
-                SceneManager.LoadScene(2);
-            }
-            else if (currentScene == 2)
-            {
-                SceneManager.LoadScene(3);
-            }
-            else if (currentScene == 3)
-            {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene("BaseLevel1");
             }
         }
     }
@@ -60,6 +59,7 @@ public class Exit : MonoBehaviour
         if (isInRange)
         {
             Decision.gameObject.SetActive(false);
+            _playerGridMovement.EnableControls();
         }
     }
 }

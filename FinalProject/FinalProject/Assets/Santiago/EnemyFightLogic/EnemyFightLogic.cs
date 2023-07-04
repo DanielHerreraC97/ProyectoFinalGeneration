@@ -16,9 +16,6 @@ public class EnemyFightLogic : MonoBehaviour
 
     private Vector2 initialPosition, lastPosition;
 
-    private static int ConditiontoWin;
-
-
     public Animator enemyAnimator;
     public Animator playerAnimator;
     private bool PlayerDeath = false;
@@ -34,12 +31,6 @@ public class EnemyFightLogic : MonoBehaviour
     private void Update()
     {
         enemyEnergy = GetComponent<EnemyGridMovemtn>().recall;
-
-        Debug.Log("enemigos muertos: " + ConditiontoWin);
-        if (ConditiontoWin == 4)
-        {
-            SceneManager.LoadScene(5);
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -61,10 +52,7 @@ public class EnemyFightLogic : MonoBehaviour
     public void CheckCollisionWithPlayer()
     {
         lastPosition = transform.position;
-       // player.GetComponent<playerGridMovement>().lastPosition = player.transform.position;
-        Debug.Log(GetComponent<EnemyGridMovemtn>().enemyType + " enemy initial position " + initialPosition + "player last position " + player.GetComponent<playerGridMovement>().lastPosition);
-        Debug.Log(GetComponent<EnemyGridMovemtn>().enemyType + " enemy last position " + lastPosition + "player initial position " + player.GetComponent<playerGridMovement>().initialPosition);
-        if (initialPosition == player.GetComponent<playerGridMovement>().lastPosition && lastPosition == player.GetComponent<playerGridMovement>().initialPosition)
+       if (initialPosition == player.GetComponent<playerGridMovement>().lastPosition && lastPosition == player.GetComponent<playerGridMovement>().initialPosition)
         {
             EnemyDeath = false;
             if (_playerGridMovement.recall > enemyEnergy)
@@ -79,19 +67,12 @@ public class EnemyFightLogic : MonoBehaviour
         }
 
         initialPosition = lastPosition;
-        //player.GetComponent<playerGridMovement>().initialPosition = player.GetComponent<playerGridMovement>().lastPosition;
-
-
     }
 
 
     public void PlayerWin()
     {
-        // enemyEnergy -= _playerGridMovement.recall;
-        // Destroy(gameObject,5f);
         Debug.Log("player win");
-        //this.gameObject.SetActive(false);
-        ConditiontoWin++;
         GetComponent<EnemyGridMovemtn>().isItAlive= false;
         EnemyDeath = true;
 
@@ -100,10 +81,6 @@ public class EnemyFightLogic : MonoBehaviour
 
     public void PlayerLost()
     {
-        //collision.gameObject.SetActive(false);
-        //Destroy(other.gameObject,5f);
-        Debug.Log("Player lose");
-        //SceneManager.LoadScene(2);
         PlayerDeath = true;
         _playerGridMovement.DisableControls();
         _playerGridMovement.restartEnemyDices?.Invoke();
@@ -116,7 +93,7 @@ public class EnemyFightLogic : MonoBehaviour
         if (EnemyDeath == true)
         {
             enemyAnimator.SetTrigger("IsDeath");
-            //AudioManager.Instance.PlaySFX("DeathM");
+            AudioManager.Instance.PlaySFX("DeathM");
             float tiempoEsperaE = 2f;
             yield return new WaitForSecondsRealtime(tiempoEsperaE);
             gameObject.SetActive(false);
@@ -125,7 +102,7 @@ public class EnemyFightLogic : MonoBehaviour
         if (PlayerDeath == true)
         {
             playerAnimator.SetTrigger("IsDeath");
-            //AudioManager.Instance.PlaySFX("DeathP");
+            AudioManager.Instance.PlaySFX("DeathP");
             float tiempoEsperaP = 2.0f;
             yield return new WaitForSecondsRealtime(tiempoEsperaP);
             SceneManager.LoadScene(4);
