@@ -110,8 +110,8 @@ MonoBehaviour:
       m_Calls: []
   recall: 0
   countToRestartenemiDices: 0
-  timer: 5
-  resetTimer: 5
+  timer: 10
+  resetTimer: 10
   stopTimer: 0
   playerHasntMove: 0
   randomSpots:
@@ -177,6 +177,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2584297961383436125}
     m_Modifications:
+    - target: {fileID: 952410554192853912, guid: b4f19998a6b83374eb274374fd81a3f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559851399303426008, guid: b4f19998a6b83374eb274374fd81a3f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 6556486740824693875, guid: b4f19998a6b83374eb274374fd81a3f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8690012792381276479, guid: b4f19998a6b83374eb274374fd81a3f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 8721326712981942340, guid: b4f19998a6b83374eb274374fd81a3f7, type: 3}
       propertyPath: m_Enabled
       value: 1

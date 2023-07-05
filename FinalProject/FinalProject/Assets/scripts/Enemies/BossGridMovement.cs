@@ -8,7 +8,7 @@ using TMPro;
 public class BossGridMovement : MonoBehaviour
 {
     [SerializeField] private GameObject spaceOne, spaceTwo, spaceThree, spaceFour, spaceFive, spaceSix, spaceSeven,spaceEigth,spaceNine;
-    private int positionCount, actualPosition, lifesCount;
+    public int positionCount, actualPosition, lifesCount;
 
     private GameObject player;
     private playerGridMovement _playerGridMovement;
@@ -153,7 +153,7 @@ public class BossGridMovement : MonoBehaviour
 
     private IEnumerator WaitForDeathAnimationEnemie()
     {
-        enemyAnimator.SetTrigger("IsDeath");
+        //enemyAnimator.SetTrigger("IsDeath");
         AudioManager.Instance.PlaySFX("DeathM");
         float tiempoEsperaE = 2f;
         yield return new WaitForSecondsRealtime(tiempoEsperaE);
