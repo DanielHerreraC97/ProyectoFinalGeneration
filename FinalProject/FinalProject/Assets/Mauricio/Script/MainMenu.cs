@@ -6,13 +6,14 @@ public class MainMenu : MonoBehaviour
     //UI
     public Slider MusicSlider, SFXSlider;
     //MainMenu
-    public GameObject Mainmenu, Settingsmenu, Creditsmenu;
+    public GameObject Mainmenu, Settingsmenu, Creditsmenu, Assetsmenu;
     public static bool TutorialComplete { get; set; } = false;
     private void Start()
     {
         Mainmenu.gameObject.SetActive(true);
         Settingsmenu.gameObject.SetActive(false);
         Creditsmenu.gameObject.SetActive(false);
+        Assetsmenu.gameObject.SetActive(false);
         TutorialComplete = false;
     }
     public void PlayGame()
@@ -39,6 +40,13 @@ public class MainMenu : MonoBehaviour
         AudioManager.Instance.PlaySFX("Botones");
         Creditsmenu.gameObject.SetActive(true);
         Mainmenu.gameObject.SetActive(false);
+        Assetsmenu.gameObject.SetActive(false);
+    }
+    public void OpenAssets()
+    {
+        AudioManager.Instance.PlaySFX("Botones");
+        Creditsmenu.gameObject.SetActive(false);
+        Assetsmenu.gameObject.SetActive(true);
     }
     public void GoToMainMenu()
     {

@@ -70,6 +70,7 @@ public class EnemyFightLogic : MonoBehaviour
         _playerGridMovement.restartEnemyDices?.Invoke();
         _playerGridMovement.moveEnemies?.Invoke();
         StartCoroutine(WaitForDeathAnimation());
+        Finish.lastSceneName = SceneManager.GetActiveScene().name;
     }
     private IEnumerator WaitForDeathAnimation()
     {

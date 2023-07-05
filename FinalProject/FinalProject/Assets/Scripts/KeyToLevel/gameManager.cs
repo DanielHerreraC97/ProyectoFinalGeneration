@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 public class gameManager : MonoBehaviour
 {
-    private PickUp _pickUp;
+    public PickUp _pickUp;
     public int recollectedKey;
     public TMP_Text keys;
     void Start()
@@ -14,6 +14,6 @@ public class gameManager : MonoBehaviour
     }
     private void Update()
     {
-        keys.text = recollectedKey.ToString();
+        keys.text = "x" + recollectedKey.ToString();
     }
 }
