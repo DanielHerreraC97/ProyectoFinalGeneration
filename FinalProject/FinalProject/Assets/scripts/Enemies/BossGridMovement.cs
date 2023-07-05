@@ -20,6 +20,9 @@ public class BossGridMovement : MonoBehaviour
 
     public TextMeshProUGUI textMeshPro;
 
+    private bool PlayerDeath = false;
+    private bool EnemyDeath = false;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -127,6 +130,7 @@ public class BossGridMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            EnemyDeath = false;
             if (_playerGridMovement.recall > enemyEnergy)
             {
                 lifesCount = lifesCount - 1;
@@ -153,29 +157,37 @@ public class BossGridMovement : MonoBehaviour
 
     private IEnumerator WaitForDeathAnimationEnemie()
     {
-        //enemyAnimator.SetTrigger("IsDeath");
-        AudioManager.Instance.PlaySFX("DeathM");
-        float tiempoEsperaE = 2f;
-        yield return new WaitForSecondsRealtime(tiempoEsperaE);
-        gameObject.SetActive(false);
+        if (EnemyDeath == true)
+        {
+            enemyAnimator.SetTrigger("IsDeath");
+            AudioManager.Instance.PlaySFX("DeathM");
+            float tiempoEsperaE = 2f;
+            yield return new WaitForSecondsRealtime(tiempoEsperaE);
+            gameObject.SetActive(false);
+            SceneManager.LoadScene("Win");
+        }
     }
 
     public void PlayerLost()
     {
+        PlayerDeath = true;
         _playerGridMovement.DisableControls();
         _playerGridMovement.restartEnemyDices?.Invoke();
         _playerGridMovement.moveEnemies?.Invoke();
         StartCoroutine(WaitForDeathAnimation());
+        Finish.lastSceneName = SceneManager.GetActiveScene().name;
     }
 
     private IEnumerator WaitForDeathAnimation()
     {
+        if (PlayerDeath == true)
+        {
             playerAnimator.SetTrigger("IsDeath");
             AudioManager.Instance.PlaySFX("DeathP");
             float tiempoEsperaP = 2.0f;
             yield return new WaitForSecondsRealtime(tiempoEsperaP);
-            SceneManager.LoadScene(4);
-
+            SceneManager.LoadScene("GameOver");
+        }
     }
 }
 
