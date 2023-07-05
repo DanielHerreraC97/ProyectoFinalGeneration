@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class Tutorial : MonoBehaviour
 {
     public Canvas Tutorial1, Tutorial2, Tutorial3, Tutorial4, Tutorial5, Tutorial6, Tutorial7;
-
     private void Start()
     {
         Tutorial1.gameObject.SetActive(false);
         Tutorial2.gameObject.SetActive(false);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Tutorial1"))
@@ -43,7 +38,6 @@ public class Tutorial : MonoBehaviour
             Tutorial7.gameObject.SetActive(true);
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Tutorial1"))
