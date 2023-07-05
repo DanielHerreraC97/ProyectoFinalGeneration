@@ -357,7 +357,7 @@ MonoBehaviour:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
+  m_CameraType: 1
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -1727,6 +1727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91574a6035f6aaa47997bbb8e266d21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Complete: {fileID: 0}
+  NoComplete: {fileID: 0}
 --- !u!1 &2066725155
 GameObject:
   m_ObjectHideFlags: 0
