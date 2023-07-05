@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 public class Decision : MonoBehaviour
 {
     public Canvas _decision;
-
     private bool isInRange = false;
-
     private GameObject player;
     private playerGridMovement _playerGridMovement;
-
     public Stairs stairs;
 
+    // incorporar pick up Santiago 
+    
+    
+    
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -42,37 +43,18 @@ public class Decision : MonoBehaviour
             _decision.gameObject.SetActive(false);
         }
     }
-
-    /*public void OnYesButtonClicked()
-    {
-        /*if (isInRange)
-        {
-            Stairs pass = FindObjectOfType<Stairs>();
-            if (pass != null)
-            {
-                string nivelAScena = pass.nivelAScena;
-                SceneManager.LoadScene(nivelAScena);
-            }
-            else
-            {
-                Debug.LogWarning("No se encontró ningún objeto con el script PasilloCollisionHandler");
-            }
-        }*/
-
-    /*if (isInRange && stairs != null)
-    {
-        string nivelAScena = stairs.nivelAScena;
-        SceneManager.LoadScene(nivelAScena);
-    }
-}*/
-
+    
     public void OnYesButtonClicked()
     {
         if (isInRange && Stairs.activeStairs != null)
         {
-            string nivelAScena = Stairs.activeStairs.nivelAScena;
-            SceneManager.LoadScene(nivelAScena);
-            Time.timeScale = 1;
+            if (stairs.haveKeys >= stairs.requiredKeys)
+            {
+                string nivelAScena = Stairs.activeStairs.nivelAScena;
+                SceneManager.LoadScene(nivelAScena);
+                Time.timeScale = 1;
+            }
+            
         }
     }
 
