@@ -8,7 +8,7 @@ using TMPro;
 public class BossGridMovement : MonoBehaviour
 {
     [SerializeField] private GameObject spaceOne, spaceTwo, spaceThree, spaceFour, spaceFive, spaceSix, spaceSeven,spaceEigth,spaceNine;
-    private int positionCount, actualPosition, lifesCount;
+    public int positionCount, actualPosition, lifesCount;
 
     private GameObject player;
     private playerGridMovement _playerGridMovement;
