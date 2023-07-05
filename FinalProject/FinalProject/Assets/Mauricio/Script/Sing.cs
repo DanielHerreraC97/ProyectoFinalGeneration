@@ -19,6 +19,11 @@ public class Sing : MonoBehaviour
     private GameObject player;
     private playerGridMovement _playerGridMovement;
 
+    public RectTransform Signal;
+    private float originalY;
+    public float moveRange = 3f;
+    public float moveDuration = 1f;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -28,6 +33,8 @@ public class Sing : MonoBehaviour
         Image1.gameObject.SetActive(false);
         Image2.gameObject.SetActive(false);
         Tutorial.gameObject.SetActive(false);
+
+        originalY = Signal.localPosition.y;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,6 +80,14 @@ public class Sing : MonoBehaviour
                 _playerGridMovement.EnableControls();
             }
         }
+
+
+        float upperLimit = originalY + moveRange; // Límite superior del rango de movimiento
+        float lowerLimit = originalY - moveRange; // Límite inferior del rango de movimiento
+
+        float newY = Mathf.PingPong(Time.time * (1f / moveDuration), moveRange * 2) - moveRange + originalY;
+
+        Signal.localPosition = new Vector3(Signal.localPosition.x, newY, Signal.localPosition.z);
     }
 
     private IEnumerator ShowImagesCoroutine()
