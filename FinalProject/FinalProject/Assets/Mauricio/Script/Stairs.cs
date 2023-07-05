@@ -2,7 +2,7 @@ using UnityEngine;
 public class Stairs : MonoBehaviour
 {
     public static Stairs activeStairs;
-    public string nivelAScena; // Nombre de la escena a cargar para este pasillo
+    public string nivelAScena;
     private gameManager _gameManager;
     public int requiredKeys;
     public int haveKeys;
@@ -18,8 +18,7 @@ public class Stairs : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            activeStairs = this; // Actualiza la referencia al objeto activo
-            // Resto del c�digo...
+            activeStairs = this;
         }
     }
 }
