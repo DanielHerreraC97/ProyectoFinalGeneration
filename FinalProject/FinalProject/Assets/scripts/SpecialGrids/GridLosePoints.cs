@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class GridLosePoints : SpecialGrid
 {
     [SerializeField] private int ActionPointsToReduce;
@@ -9,10 +6,8 @@ public class GridLosePoints : SpecialGrid
     {
         _dice.NegativeCounter(ActionPointsToReduce-1);
         Debug.Log("reduce " + ActionPointsToReduce);
-        
     }
-
-    protected new void OnTriggerEnter2D(Collider2D other)
+  protected new void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
