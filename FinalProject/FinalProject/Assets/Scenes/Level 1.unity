@@ -4488,7 +4488,7 @@ Tilemap:
       - {fileID: -1442084558, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: 99900419, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: -2140991730, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: 24, z: 0}
@@ -64439,7 +64439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pickUp: {fileID: 0}
   recollectedKey: 0
-  keys: {fileID: 0}
+  keys: {fileID: 668187149}
 --- !u!1 &1308134990
 GameObject:
   m_ObjectHideFlags: 0
@@ -65016,7 +65016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nivelAScena: BaseLevel
-  requiredKeys: 0
+  requiredKeys: 2
   haveKeys: 0
 --- !u!61 &1411218349
 BoxCollider2D:
