@@ -7,7 +7,7 @@ using TMPro;
 
 public class BossGridMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject spaceOne, spaceTwo, spaceThree, spaceFour;
+    [SerializeField] private GameObject spaceOne, spaceTwo, spaceThree, spaceFour, spaceFive, spaceSix, spaceSeven,spaceEigth,spaceNine;
     private int positionCount, actualPosition, lifesCount;
 
     private GameObject player;
@@ -56,7 +56,7 @@ public class BossGridMovement : MonoBehaviour
 
     private void Move()
     {
-        if (actualPosition == 1)
+        if (actualPosition == 1 && lifesCount == 3)
         {
             transform.position = spaceTwo.transform.position;
             actualPosition = 2;
@@ -70,7 +70,7 @@ public class BossGridMovement : MonoBehaviour
             positionCount = 0;
         }
 
-        else if (actualPosition == 2 && lifesCount < 3)
+        else if ((actualPosition == 2 || actualPosition == 1 || actualPosition == 5) && lifesCount == 2)
         {
             transform.position = spaceThree.transform.position;
             actualPosition = 3;
@@ -80,23 +80,45 @@ public class BossGridMovement : MonoBehaviour
 
         else if (actualPosition == 3 && lifesCount == 2)
         {
-            transform.position = spaceOne.transform.position;
-            actualPosition = 1;
+            transform.position = spaceFour.transform.position;
+            actualPosition = 4;
             positionCount = 0;
 
         }
 
-        else if (actualPosition == 3 && lifesCount < 2)
+        else if (actualPosition == 4 && lifesCount == 2)
         {
-            transform.position = spaceFour.transform.position;
-            actualPosition = 4;
+            transform.position = spaceFive.transform.position;
+            actualPosition = 5;
+            positionCount = 0;
+        }
+
+        else if ((actualPosition == 3 || actualPosition == 4 || actualPosition == 5 || actualPosition == 9) && lifesCount == 1)
+        {
+            transform.position = spaceSix.transform.position;
+            actualPosition = 6;
+            positionCount = 0;
+
+        }
+
+        else if (actualPosition == 6 && lifesCount == 1)
+        {
+            transform.position = spaceSeven.transform.position;
+            actualPosition = 7;
+            positionCount = 0;
+        }
+
+        else if (actualPosition == 7 && lifesCount == 1)
+        {
+            transform.position = spaceEigth.transform.position;
+            actualPosition = 8;
             positionCount = 0;
         }
 
         else
         {
-            transform.position = spaceOne.transform.position;
-            actualPosition = 1;
+            transform.position = spaceNine.transform.position;
+            actualPosition = 9;
             positionCount = 0;
         }
     }
