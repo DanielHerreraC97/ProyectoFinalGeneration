@@ -153,7 +153,7 @@ public class BossGridMovement : MonoBehaviour
 
     private IEnumerator WaitForDeathAnimationEnemie()
     {
-        enemyAnimator.SetTrigger("IsDeath");
+        //enemyAnimator.SetTrigger("IsDeath");
         AudioManager.Instance.PlaySFX("DeathM");
         float tiempoEsperaE = 2f;
         yield return new WaitForSecondsRealtime(tiempoEsperaE);
