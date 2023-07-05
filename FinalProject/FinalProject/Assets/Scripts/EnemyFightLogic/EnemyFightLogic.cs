@@ -1,26 +1,16 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class EnemyFightLogic : MonoBehaviour
 {
     public int enemyEnergy;
-
     private GameObject player;
     private playerGridMovement _playerGridMovement;
-
     private Vector2 initialPosition, lastPosition;
-
     public Animator enemyAnimator;
     public Animator playerAnimator;
     private bool PlayerDeath = false;
     private bool EnemyDeath = false;
-
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -43,12 +33,11 @@ public class EnemyFightLogic : MonoBehaviour
             }
 
             if (_playerGridMovement.recall <= enemyEnergy)
-            {
-            PlayerLost();
+            { 
+                PlayerLost();
             }
         }
     }
-
     public void CheckCollisionWithPlayer()
     {
         lastPosition = transform.position;
@@ -65,20 +54,15 @@ public class EnemyFightLogic : MonoBehaviour
                 PlayerLost();
             }
         }
-
         initialPosition = lastPosition;
     }
-
-
     public void PlayerWin()
     {
         Debug.Log("player win");
         GetComponent<EnemyGridMovemtn>().isItAlive= false;
         EnemyDeath = true;
-
         StartCoroutine(WaitForDeathAnimation());
     }
-
     public void PlayerLost()
     {
         PlayerDeath = true;
@@ -87,7 +71,6 @@ public class EnemyFightLogic : MonoBehaviour
         _playerGridMovement.moveEnemies?.Invoke();
         StartCoroutine(WaitForDeathAnimation());
     }
-
     private IEnumerator WaitForDeathAnimation()
     {
         if (EnemyDeath == true)
@@ -98,7 +81,6 @@ public class EnemyFightLogic : MonoBehaviour
             yield return new WaitForSecondsRealtime(tiempoEsperaE);
             gameObject.SetActive(false);
         }
-
         if (PlayerDeath == true)
         {
             playerAnimator.SetTrigger("IsDeath");
