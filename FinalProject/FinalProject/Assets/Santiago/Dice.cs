@@ -44,14 +44,12 @@ public class Dice : MonoBehaviour {
     private IEnumerator RollTheDice()
     {
         //  yield return new WaitForSeconds(timeToDelay);
-    
         for (int i = 0; i <= 10; i++)
         {
             randomDiceSide = Random.Range(0, numberDiceFaces);
             rend.sprite = diceSides[randomDiceSide+1];
             yield return new WaitForSeconds(0.05f);
         }
-
         finalSide = randomDiceSide + 1;
         _playerGridMovement.stopTimer = true;
         if (!_playerGridMovement.isTimerWorking )
@@ -72,7 +70,6 @@ public class Dice : MonoBehaviour {
             StartCoroutine(RollTheDice());
         }
     }
-
     public void IncreaseCounter(int pointsToIncrease)
     {
         finalSide += pointsToIncrease;

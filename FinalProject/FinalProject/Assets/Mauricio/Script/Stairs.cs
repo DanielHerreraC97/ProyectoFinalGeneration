@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class Stairs : MonoBehaviour
 {
     public static Stairs activeStairs;
@@ -10,7 +9,6 @@ public class Stairs : MonoBehaviour
     private gameManager _gameManager;
     public int requiredKeys;
     public int haveKeys;
-    
     void Start()
     {
         _gameManager = GameObject.FindObjectOfType<gameManager>().GetComponent<gameManager>();
@@ -19,7 +17,6 @@ public class Stairs : MonoBehaviour
     {
         haveKeys = _gameManager.recollectedKey;
     }
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

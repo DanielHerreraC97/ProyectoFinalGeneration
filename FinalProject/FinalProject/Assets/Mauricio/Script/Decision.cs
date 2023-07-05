@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class Decision : MonoBehaviour
 {
     public Canvas _decision;
@@ -10,19 +9,12 @@ public class Decision : MonoBehaviour
     private GameObject player;
     private playerGridMovement _playerGridMovement;
     public Stairs stairs;
-
-    // incorporar pick up Santiago 
-    
-    
-    
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         _playerGridMovement = player.GetComponent<playerGridMovement>();
-
         _decision.gameObject.SetActive(false);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -34,7 +26,6 @@ public class Decision : MonoBehaviour
             _playerGridMovement.DisableControls();
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -43,7 +34,6 @@ public class Decision : MonoBehaviour
             _decision.gameObject.SetActive(false);
         }
     }
-    
     public void OnYesButtonClicked()
     {
         if (isInRange && Stairs.activeStairs != null)
@@ -54,10 +44,8 @@ public class Decision : MonoBehaviour
                 SceneManager.LoadScene(nivelAScena);
                 Time.timeScale = 1;
             }
-            
         }
     }
-
     public void OnNoButtonClicked()
     {
         if (isInRange)
