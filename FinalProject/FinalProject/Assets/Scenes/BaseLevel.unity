@@ -6188,7 +6188,7 @@ Tilemap:
       - {fileID: -1442084558, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: 99900419, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: -2140991730, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -1, z: 0}
@@ -6258,7 +6258,7 @@ Tilemap:
       - {fileID: -1442084558, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: 99900419, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
       - {fileID: -2140991730, guid: 9affe8c4fea7f4c948074d332d382b7f, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 22, y: 3, z: 0}
@@ -8560,7 +8560,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.5347223
+  orthographic size: 5.765625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -37221,6 +37221,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1255007877}
     - target: {fileID: 2584297961383436115, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
+      propertyPath: timer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2584297961383436115, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: walls
       value: 
       objectReference: {fileID: 414442004}
@@ -37228,6 +37232,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 534430139}
+    - target: {fileID: 2584297961383436115, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
+      propertyPath: resetTimer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2584297961383436115, guid: 6ca31f51e74350444afa41798f02f2b8, type: 3}
       propertyPath: moveEnemies.m_PersistentCalls.m_Calls.Array.size
       value: 0
