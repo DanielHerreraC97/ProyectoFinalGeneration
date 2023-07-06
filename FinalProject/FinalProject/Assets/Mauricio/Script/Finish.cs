@@ -5,9 +5,7 @@ public class Finish : MonoBehaviour
     public static string lastSceneName;
     public static bool TutorialComplete;
     public GameObject Complete, NoComplete;
-
     //private string ActualScene = SceneManager.GetActiveScene().name;
-
     private void Update()
     {
         if (lastSceneName == "Tutorial")
@@ -31,13 +29,11 @@ public class Finish : MonoBehaviour
             NoComplete.gameObject.SetActive(false);
         }
     }
-
     public void RetryGame()
     {
         AudioManager.Instance.PlaySFX("Botones");
         SceneManager.LoadScene(lastSceneName);
     }
-
     public void Base()
     {
         AudioManager.Instance.PlaySFX("Botones");
