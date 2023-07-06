@@ -1,19 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 public class gameManager : MonoBehaviour
 {
-    public PickUp _pickUp;
     public int recollectedKey;
     public TMP_Text keys;
+    public static gameManager Instance;
     void Start()
     {
-        recollectedKey = 0;
+        PlayerPrefs.GetInt("keys");
+        PlayerPrefs.GetInt("DisplayKeys");
+        recollectedKey = 0 + PlayerPrefs.GetInt("keys");
     }
     private void Update()
     {
-        keys.text = "x" + recollectedKey.ToString();
+        PlayerPrefs.SetInt("keys", recollectedKey);
+        PlayerPrefs.SetInt("DisplayKeys", recollectedKey);
+        displayKeys();
+    }
+    void displayKeys()
+    {
+        keys.text = "x" + PlayerPrefs.GetInt("keys").ToString();
     }
 }

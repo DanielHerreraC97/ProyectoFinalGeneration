@@ -45,6 +45,7 @@ public class Finish : MonoBehaviour
     }
     public void MainMenu()
     {
+        PlayerPrefs.DeleteAll();
         AudioManager.Instance.PlaySFX("Botones");
         SceneManager.LoadScene("MainMenu");
     }

@@ -1,11 +1,8 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
-using TMPro;
 using Random = UnityEngine.Random;
 public class playerGridMovement : MonoBehaviour
 {
@@ -20,7 +17,6 @@ public class playerGridMovement : MonoBehaviour
     public float timer;
     public float resetTimer;
     //public TMP_Text timerUI;
-
     public bool stopTimer, playerHasntMove;
     public Transform[] randomSpots;
     private Rigidbody2D rb;
@@ -71,7 +67,6 @@ public void DisableControls()
         if (PauseManager.paused) return;
         if (CanMove(direction) && recall > 0)
         {
-            //transform.position = Vector3.MoveTowards(transform.position, direction, 1f);
             rb.MovePosition(transform.position += (Vector3)direction);
             initialPosition = lastPosition;
             lastPosition= transform.position;
@@ -79,7 +74,6 @@ public void DisableControls()
             restartEnemyDices?.Invoke();
             moveEnemies?.Invoke();
             timer = resetTimer;
-            //slider.maxValue = resetTimer;
         }
     }
     private bool CanMove(Vector2 direction)
@@ -118,13 +112,12 @@ public void DisableControls()
             canPunish = CanItPunishmentInThatdirection(punishDirection);
         }
         while(canPunish == false );
-        // transform.position = Vector3.MoveTowards(transform.position, punishDirection, 1f);
         transform.position = punishDirection;
         _dice.NegativeCounter();
         timer = resetTimer;
         restartEnemyDices?.Invoke();
         moveEnemies?.Invoke();
-;    }
+    }
     private bool CanItPunishmentInThatdirection(Vector3 directionToPunish)
     {
         Vector3Int gridPosition = floor.WorldToCell(directionToPunish);
