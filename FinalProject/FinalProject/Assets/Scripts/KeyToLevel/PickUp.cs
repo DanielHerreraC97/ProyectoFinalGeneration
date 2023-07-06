@@ -4,7 +4,7 @@ public class PickUp : MonoBehaviour
    private gameManager _gameManager;
    private void Start()
    {
-      _gameManager = GameObject.FindObjectOfType<gameManager>().GetComponent<gameManager>();
+      _gameManager = FindObjectOfType<gameManager>().GetComponent<gameManager>();
    }
    private void OnTriggerEnter2D(Collider2D other)
    {

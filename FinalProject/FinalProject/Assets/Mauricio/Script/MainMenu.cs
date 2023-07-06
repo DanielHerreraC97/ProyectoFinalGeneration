@@ -21,6 +21,7 @@ public class MainMenu : MonoBehaviour
         AudioManager.Instance.PlaySFX("Botones");
         if (!MainMenu.TutorialComplete)
         {
+            PlayerPrefs.DeleteAll();
             SceneManager.LoadScene("Tutorial");
             MainMenu.TutorialComplete = true;
         }

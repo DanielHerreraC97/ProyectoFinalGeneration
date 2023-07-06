@@ -12,7 +12,7 @@ public class Stairs : MonoBehaviour
     }
     void Update()
     {
-        haveKeys = _gameManager.recollectedKey;
+        haveKeys = PlayerPrefs.GetInt("keys");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
